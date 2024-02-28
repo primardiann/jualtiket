@@ -1,1 +1,1 @@
-Ini merupakan sebuah kode
+Ini adalah sebuah kode
