@@ -9,3 +9,7 @@ Route::get('/sign_up', function () {
     return view('sign_up');
 });
 
+Route::get('/hasil_resi', function () {
+    return view('resi');
+});
+
