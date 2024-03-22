@@ -13,3 +13,10 @@ Route::get('/hasil_resi', function () {
     return view('resi');
 });
 
+Route::get('/kategori', function () {
+    return view('kategori_tiket');
+});
+
+Route::get('/Edit_profil', function () {
+    return view('profil_user');
+});

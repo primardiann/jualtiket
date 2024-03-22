@@ -6,20 +6,92 @@
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     </head>
+    <br>
+    <body>
+        <nav class="p-10">
 
-    <form class="max-w-md mx-auto">
-        <center>
-            <h5 class="text-xl font-medium text-gray-900 dark:text-white">Sign up</h5>
-        </center>
+            <form class="max-w-md mx-auto">
+                <center>
+                    <h5 class="text-xl font-medium text-gray-900 dark:text-white">Daftar</h5>
+                </center>
+                <br>
+
+                <div class="relative z-0 w-full mb-5 group">
+                    <input
+                        type="email"
+                        name="floating_email"
+                        id="floating_email"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                required />
+            <label for="
+                        floating_email" class="
+                        peer-focus:font-medium="peer-focus:font-medium"
+                        absolute="absolute"
+                        text-sm="text-sm"
+                        text-gray-500="text-gray-500"
+                        dark:text-gray-400="dark:text-gray-400"
+                        duration-300="duration-300"
+                        transform="transform"
+                        -translate-y-6="-translate-y-6"
+                        scale-75="scale-75"
+                        top-3="top-3"
+                        -z-10="-z-10"
+                        origin-[0]="origin-[0]"
+                        peer-focus:start-0="peer-focus:start-0"
+                        rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
+                        rtl:peer-focus:left-auto="rtl:peer-focus:left-auto"
+                        peer-focus:text-blue-600="peer-focus:text-blue-600"
+                        peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
+                        peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
+                        peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
+                        peer-focus:scale-75="peer-focus:scale-75"
+                        peer-focus:-translate-y-6"="
+                        peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
+                        "">Alamat email</label>
+            </div>
+
+            <div class="relative z-0 w-full mb-5 group">
+                <input
+                    type="password"
+                    name="floating_password"
+                    id="floating_password"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " required />
+      <label for="
+                    floating_password" class="
+                    peer-focus:font-medium="peer-focus:font-medium"
+                    absolute="absolute"
+                    text-sm="text-sm"
+                    text-gray-500="text-gray-500"
+                    dark:text-gray-400="dark:text-gray-400"
+                    duration-300="duration-300"
+                    transform="transform"
+                    -translate-y-6="-translate-y-6"
+                    scale-75="scale-75"
+                    top-3="top-3"
+                    -z-10="-z-10"
+                    origin-[0]="origin-[0]"
+                    peer-focus:start-0="peer-focus:start-0"
+                    rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
+                    peer-focus:text-blue-600="peer-focus:text-blue-600"
+                    peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
+                    peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
+                    peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
+                    peer-focus:scale-75="peer-focus:scale-75"
+                    peer-focus:-translate-y-6"="
+                    peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
+                    "">Kata sandi</label>
+        </div>
         <div class="relative z-0 w-full mb-5 group">
             <input
-                type="email"
-                name="floating_email"
-                id="floating_email"
+                type="password"
+                name="repeat_password"
+                id="floating_repeat_password"
                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" " required />
       <label for="
-                floating_email" class="
+                floating_repeat_password" class="
                 peer-focus:font-medium="peer-focus:font-medium"
                 absolute="absolute"
                 text-sm="text-sm"
@@ -34,23 +106,57 @@
                 origin-[0]="origin-[0]"
                 peer-focus:start-0="peer-focus:start-0"
                 rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
-                rtl:peer-focus:left-auto="rtl:peer-focus:left-auto"
                 peer-focus:text-blue-600="peer-focus:text-blue-600"
                 peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
                 peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
                 peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
                 peer-focus:scale-75="peer-focus:scale-75"
-                peer-focus:-translate-y-6"="peer-focus:-translate-y-6"">Email address</label>
+                peer-focus:-translate-y-6"="
+                peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
+                "">Konfrimasi kata sandi</label>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-5 group">
+            <input
+                type="text"
+                name="floating_first_name"
+                id="floating_first_name"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" " required />
+        <label for="
+                floating_first_name" class="
+                peer-focus:font-medium="peer-focus:font-medium"
+                absolute="absolute"
+                text-sm="text-sm"
+                text-gray-500="text-gray-500"
+                dark:text-gray-400="dark:text-gray-400"
+                duration-300="duration-300"
+                transform="transform"
+                -translate-y-6="-translate-y-6"
+                scale-75="scale-75"
+                top-3="top-3"
+                -z-10="-z-10"
+                origin-[0]="origin-[0]"
+                peer-focus:start-0="peer-focus:start-0"
+                rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
+                peer-focus:text-blue-600="peer-focus:text-blue-600"
+                peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
+                peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
+                peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
+                peer-focus:scale-75="peer-focus:scale-75"
+                peer-focus:-translate-y-6"="
+                peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
+                "">Nama depan</label>
     </div>
     <div class="relative z-0 w-full mb-5 group">
         <input
-            type="password"
-            name="floating_password"
-            id="floating_password"
+            type="text"
+            name="floating_last_name"
+            id="floating_last_name"
             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" " required />
-      <label for="
-            floating_password" class="
+        <label for="
+            floating_last_name" class="
             peer-focus:font-medium="peer-focus:font-medium"
             absolute="absolute"
             text-sm="text-sm"
@@ -70,48 +176,22 @@
             peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
             peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
             peer-focus:scale-75="peer-focus:scale-75"
-            peer-focus:-translate-y-6"="peer-focus:-translate-y-6"">Password</label>
+            peer-focus:-translate-y-6"="
+            peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
+            "">Nama belakang</label>
 </div>
-<div class="relative z-0 w-full mb-5 group">
-    <input
-        type="password"
-        name="repeat_password"
-        id="floating_repeat_password"
-        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=" " required />
-      <label for="
-        floating_repeat_password" class="
-        peer-focus:font-medium="peer-focus:font-medium"
-        absolute="absolute"
-        text-sm="text-sm"
-        text-gray-500="text-gray-500"
-        dark:text-gray-400="dark:text-gray-400"
-        duration-300="duration-300"
-        transform="transform"
-        -translate-y-6="-translate-y-6"
-        scale-75="scale-75"
-        top-3="top-3"
-        -z-10="-z-10"
-        origin-[0]="origin-[0]"
-        peer-focus:start-0="peer-focus:start-0"
-        rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
-        peer-focus:text-blue-600="peer-focus:text-blue-600"
-        peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-        peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-        peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-        peer-focus:scale-75="peer-focus:scale-75"
-        peer-focus:-translate-y-6"="peer-focus:-translate-y-6"">Confirm password</label>
 </div>
 <div class="grid md:grid-cols-2 md:gap-6">
 <div class="relative z-0 w-full mb-5 group">
     <input
-        type="text"
-        name="floating_first_name"
-        id="floating_first_name"
+        type="number"
+        name="floating_phone"
+        id="floating_phone"
         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=" " required />
+        placeholder=" "
+            required />
         <label for="
-        floating_first_name" class="
+        floating_phone" class="
         peer-focus:font-medium="peer-focus:font-medium"
         absolute="absolute"
         text-sm="text-sm"
@@ -131,17 +211,21 @@
         peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
         peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
         peer-focus:scale-75="peer-focus:scale-75"
-        peer-focus:-translate-y-6"="peer-focus:-translate-y-6"">First name</label>
+        peer-focus:-translate-y-6"="
+        peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
+        "">Nomor telepon</label>
 </div>
+
 <div class="relative z-0 w-full mb-5 group">
 <input
-    type="text"
-    name="floating_last_name"
-    id="floating_last_name"
+    type="date"
+    name="floating_company"
+    id="floating_company"
     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-    placeholder=" " required />
-        <label for="
-    floating_last_name" class="
+    placeholder=" "
+        required />
+    <label for="
+    floating_company" class="
     peer-focus:font-medium="peer-focus:font-medium"
     absolute="absolute"
     text-sm="text-sm"
@@ -161,75 +245,15 @@
     peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
     peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
     peer-focus:scale-75="peer-focus:scale-75"
-    peer-focus:-translate-y-6"="peer-focus:-translate-y-6"">Last name</label>
+    peer-focus:-translate-y-6"="
+    peer-focus:-translate-y-6""="peer-focus:-translate-y-6""">Tanggal lahir</label>
 </div>
-</div>
-<div class="grid md:grid-cols-2 md:gap-6">
-<div class="relative z-0 w-full mb-5 group">
-<input
-type="tel"
-pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-name="floating_phone"
-id="floating_phone"
-class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-placeholder=" " required />
-        <label for="
-floating_phone" class="
-peer-focus:font-medium="peer-focus:font-medium"
-absolute="absolute"
-text-sm="text-sm"
-text-gray-500="text-gray-500"
-dark:text-gray-400="dark:text-gray-400"
-duration-300="duration-300"
-transform="transform"
--translate-y-6="-translate-y-6"
-scale-75="scale-75"
-top-3="top-3"
--z-10="-z-10"
-origin-[0]="origin-[0]"
-peer-focus:start-0="peer-focus:start-0"
-rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
-peer-focus:text-blue-600="peer-focus:text-blue-600"
-peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-peer-focus:scale-75="peer-focus:scale-75"
-peer-focus:-translate-y-6"="peer-focus:-translate-y-6"">Phone number (123-456-7890)</label>
-</div>
-<div class="relative z-0 w-full mb-5 group">
-<input
-type="text"
-name="floating_company"
-id="floating_company"
-class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-placeholder=" " required />
-        <label for="
-floating_company" class="
-peer-focus:font-medium="peer-focus:font-medium"
-absolute="absolute"
-text-sm="text-sm"
-text-gray-500="text-gray-500"
-dark:text-gray-400="dark:text-gray-400"
-duration-300="duration-300"
-transform="transform"
--translate-y-6="-translate-y-6"
-scale-75="scale-75"
-top-3="top-3"
--z-10="-z-10"
-origin-[0]="origin-[0]"
-peer-focus:start-0="peer-focus:start-0"
-rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
-peer-focus:text-blue-600="peer-focus:text-blue-600"
-peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-peer-focus:scale-75="peer-focus:scale-75"
-peer-focus:-translate-y-6"="peer-focus:-translate-y-6"">
-date of birth 12/22/2022</label>
-</div>
+
 </div>
 <button
 type="submit"
-class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
 </form>
+</nav>
+</body>
 </html>

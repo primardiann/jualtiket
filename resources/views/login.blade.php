@@ -6,16 +6,18 @@
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     </head>
+    <br>
 
     <center>
+    <div class="mx-auto my-10 max-w-md">   
         <div
-            class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <form class="space-y-6" action="#">
-                <h5 class="text-xl font-medium text-gray-900 dark:text-white">Login</h5>
+            class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow sm:p-8 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <form class="space-y-6"   action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">Masuk</h5>
                 <div>
                     <label
                         for="email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Anda</label>
                     <input
                         type="email"
                         name="email"
@@ -27,7 +29,7 @@
                 <div>
                     <label
                         for="password"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kata sandi Anda</label>
                     <input
                         type="password"
                         name="password"
@@ -48,20 +50,21 @@
                         </div>
                         <label
                             for="remember"
-                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ingat saya</label>
                     </div>
                     <a
                         href="#"
-                        class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                        class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lupa kata sandi?</a>
                 </div>
                 <button
                     type="submit"
-                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Masuk ke akun anda</button>
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                    Not registered?
-                    <a href="sign_up" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                    Belum terdaftar?
+                    <a href="sign_up" class="text-blue-700 hover:underline dark:text-blue-500">Buat akun</a>
                 </div>
             </form>
         </div>
+    </div>
     </center>
 </html>
