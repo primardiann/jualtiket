@@ -17,6 +17,10 @@ Route::get('/kategori', function () {
     return view('kategori_tiket');
 });
 
-Route::get('/Edit_profil', function () {
+Route::get('/edit_profil', function () {
     return view('profil_user');
+});
+
+Route::get('/history', function () {
+    return view('histori');
 });
