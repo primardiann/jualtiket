@@ -24,3 +24,7 @@ Route::get('/edit_profil', function () {
 Route::get('/history', function () {
     return view('histori');
 });
+
+Route::get('/detail', function () {
+    return view('detail_pembayaran');
+});
