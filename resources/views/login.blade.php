@@ -17,7 +17,7 @@
                 <div>
                     <label
                         for="email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Anda</label>
+                        class="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white">Email Anda</label>
                     <input
                         type="email"
                         name="email"
@@ -29,7 +29,7 @@
                 <div>
                     <label
                         for="password"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kata sandi Anda</label>
+                        class="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white">Kata sandi Anda</label>
                     <input
                         type="password"
                         name="password"

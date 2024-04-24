@@ -28,3 +28,11 @@ Route::get('/history', function () {
 Route::get('/detail', function () {
     return view('detail_pembayaran');
 });
+
+Route::get('/home', function () {
+    return view('tampilan_awal');
+});
+
+Route::get('/deskripsi', function () {
+    return view('deskripsi');
+});
