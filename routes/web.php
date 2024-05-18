@@ -36,3 +36,7 @@ Route::get('/home', function () {
 Route::get('/deskripsi', function () {
     return view('deskripsi');
 });
+
+Route::get('/admin_tambah_konser', function () {
+    return view('admin_tambah_konser');
+});
