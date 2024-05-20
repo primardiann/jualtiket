@@ -144,17 +144,25 @@
           <input type="text" id="kateogri1" class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" placeholder="Masukkan Jenis Kategori">
         </div>
         <div class="mb-4 mt-4 ml-3 mr-3">
-        <label for="hargaTiket1" class="block text-gray-700 text-sm font-medium mb-2">Harga tiket</label>
-        <div class="input-group">
+          <label for="hargaTiket1" class="block text-gray-700 text-sm font-medium mb-2">Harga tiket</label>
+          <div class="input-group">
           <span class="input-group-text">Rp</span>
           <input type="number" id="hargaDasar" class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 ml-1 mr-1">
         </div>
         <div class="mb-4 mt-4 ">
-        <label for="stok1" class="block text-gray-700 text-sm font-medium mb-2">Stok Tiket Kategori 1</label>
+          <label for="stok1" class="block text-gray-700 text-sm font-medium mb-2">Stok Tiket Kategori 1</label>
+        </div>
         <div class="input-group">
           <input type="number" id="stok1" class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
         </div>
-        <div class="mb-3 mt-4">
+        </div>
+      </div>
+    </form>
+    <center> <button type="button" class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      <span class="mr-1">+</span>
+      <span>Tambah Kategori</span>
+    </button> </center>
+    <div class="mb-3 mt-4">
             <label for="tanggalPeluncuran" class="block text-gray-700 text-sm font-medium mb-2">Tanggal Peluncuran Tiket</label>
             <input type="date" class="form-control" id="tanggalPeluncuran">
           </div>
@@ -162,11 +170,10 @@
             <label for="tanggalTutup" class="block text-gray-700 text-sm font-medium mb-2">Tanggal Tutup Penjualan Tiket</label>
             <input type="date" class="form-control" id="tanggalTutup">
           </div>
-      </form>
-      </div>
-    </form>
-     
-  <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Unggah</button>
+    <div class="container flex justify-content: flex-end">
+      <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Unggah</button>
+    </div>
+
       
 </body>          
   
