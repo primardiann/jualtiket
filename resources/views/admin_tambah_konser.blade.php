@@ -163,7 +163,8 @@
       <span>Tambah Kategori</span>
     </button> </center>
     <div class="mb-3 mt-4">
-            <label for="tanggalPeluncuran" class="block text-gray-700 text-sm font-medium mb-2">Tanggal Peluncuran Tiket</label>
+            <label for="tanggalPeluncuran" class="block text-gray-700 text-sm f
+            ont-medium mb-2">Tanggal Peluncuran Tiket</label>
             <input type="date" class="form-control" id="tanggalPeluncuran">
           </div>
           <div class="mb-3">
