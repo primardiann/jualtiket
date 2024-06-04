@@ -40,3 +40,7 @@ Route::get('/deskripsi', function () {
 Route::get('/admin_tambah_konser', function () {
     return view('admin_tambah_konser');
 });
+
+Route::get('/admin_profil_pengguna', function () {
+    return view('admin_profil_pengguna');
+});
