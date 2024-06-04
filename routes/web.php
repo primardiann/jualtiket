@@ -36,3 +36,9 @@ Route::get('/home', function () {
 Route::get('/deskripsi', function () {
     return view('deskripsi');
 });
+
+
+Route::get('/dadminaiko', function () {
+    return view('admin_tampilan_awal');
+});
+
