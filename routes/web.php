@@ -37,8 +37,24 @@ Route::get('/deskripsi', function () {
     return view('deskripsi');
 });
 
+<<<<<<< HEAD
 
 Route::get('/dadminaiko', function () {
     return view('admin_tampilan_awal');
 });
 
+=======
+Route::get('/admin_tambah_konser', function () {
+    return view('admin_tambah_konser');
+});
+
+<<<<<<< HEAD
+Route::get('/admin_profil_pengguna', function () {
+    return view('admin_profil_pengguna');
+});
+=======
+Route::get('/data_pembeli', function () {
+    return view('data_pembeli');
+});
+>>>>>>> ecde9b5dc399773e9148546578f43ddbe21ce5d0
+>>>>>>> 4b4be454a8f0ddb1f6bbded5ecab0285338d96e1
