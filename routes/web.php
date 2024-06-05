@@ -45,6 +45,14 @@ Route::get('/admin_data_tiket', function () {
     return view('admin_data_tiket');
 });
 
+Route::get('/pembatalan_tiket', function () {
+    return view('pembatalan_tiket');
+});
+
+Route::get('/edit_tiket', function () {
+    return view('edit_tiket');
+});
+
 Route::get('/data_pembeli', function () {
     return view('data_pembeli');
 });
