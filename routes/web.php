@@ -33,22 +33,18 @@ Route::get('/home', function () {
     return view('tampilan_awal');
 });
 
-Route::get('/deskripsi', function () {
-    return view('deskripsi');
+Route::get('/edit_tiket', function () {
+    return view('edit_tiket');
 });
 
-<<<<<<< HEAD
-
-Route::get('/dadminaiko', function () {
-    return view('admin_tampilan_awal');
+Route::get('/admin_profil_pengguna', function () {
+    return view('admin_profil_pengguna');
 });
 
-=======
-Route::get('/admin_tambah_konser', function () {
-    return view('admin_tambah_konser');
+Route::get('/data_pembeli', function () {
+    return view('data_pembeli');
 });
 
-<<<<<<< HEAD
 Route::get('/admin_data_tiket', function () {
     return view('admin_data_tiket');
 });
@@ -57,22 +53,22 @@ Route::get('/pembatalan_tiket', function () {
     return view('pembatalan_tiket');
 });
 
-Route::get('/edit_tiket', function () {
-    return view('edit_tiket');
+Route::get('/admin_tambah_konser', function () {
+    return view('admin_tambah_konser');
+});
+
+Route::get('/admin_edit_tiket', function () {
+    return view('admin_edit_tiket');
 });
 
 Route::get('/data_pembeli', function () {
     return view('data_pembeli');
 });
-=======
-<<<<<<< HEAD
-Route::get('/admin_profil_pengguna', function () {
-    return view('admin_profil_pengguna');
+
+Route::get('/dadminaiko', function () {
+    return view('admin_tampilan_awal');
 });
-=======
-Route::get('/data_pembeli', function () {
-    return view('data_pembeli');
+
+Route::get('/deskripsi', function () {
+    return view('deskripsi');
 });
->>>>>>> ecde9b5dc399773e9148546578f43ddbe21ce5d0
->>>>>>> 4b4be454a8f0ddb1f6bbded5ecab0285338d96e1
->>>>>>> b95af30bc425e170bebb718b79895e1edda85314
