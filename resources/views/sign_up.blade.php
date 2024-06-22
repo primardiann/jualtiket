@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link
@@ -6,11 +7,13 @@
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     </head>
-    <br>
     <body>
         <nav class="p-10">
-
-            <form class="max-w-md mx-auto">
+            <form
+                method="POST"
+                action="{{ route('sign_up.post') }}"
+                class="max-w-md mx-auto">
+                @csrf
                 <center>
                     <h5 class="text-xl font-medium text-gray-900 dark:text-white">Daftar</h5>
                 </center>
@@ -19,13 +22,14 @@
                 <div class="relative z-0 w-full mb-5 group">
                     <input
                         type="email"
-                        name="floating_email"
-                        id="floating_email"
+                        name="email"
+                        id="email"
+                        value="{{ old('email') }}"
+                        autofocus="autofocus"
                         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder=" "
-                required />
-            <label for="
-                        floating_email" class="
+                        placeholder=" " required />
+                <label for="
+                        email" class="
                         peer-focus:font-medium="peer-focus:font-medium"
                         absolute="absolute"
                         text-sm="text-sm"
@@ -38,28 +42,20 @@
                         top-3="top-3"
                         -z-10="-z-10"
                         origin-[0]="origin-[0]"
-                        peer-focus:start-0="peer-focus:start-0"
-                        rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
-                        rtl:peer-focus:left-auto="rtl:peer-focus:left-auto"
+                        peer-focus:left-0="peer-focus:left-0"
                         peer-focus:text-blue-600="peer-focus:text-blue-600"
-                        peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-                        peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-                        peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-                        peer-focus:scale-75="peer-focus:scale-75"
-                        peer-focus:-translate-y-6"="
-                        peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
-                        "">Alamat email</label>
+                        peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Alamat email</label>
             </div>
 
             <div class="relative z-0 w-full mb-5 group">
                 <input
                     type="password"
-                    name="floating_password"
-                    id="floating_password"
+                    name="password"
+                    id="password"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" " required />
-      <label for="
-                    floating_password" class="
+                <label for="
+                    password" class="
                     peer-focus:font-medium="peer-focus:font-medium"
                     absolute="absolute"
                     text-sm="text-sm"
@@ -72,26 +68,20 @@
                     top-3="top-3"
                     -z-10="-z-10"
                     origin-[0]="origin-[0]"
-                    peer-focus:start-0="peer-focus:start-0"
-                    rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
+                    peer-focus:left-0="peer-focus:left-0"
                     peer-focus:text-blue-600="peer-focus:text-blue-600"
-                    peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-                    peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-                    peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-                    peer-focus:scale-75="peer-focus:scale-75"
-                    peer-focus:-translate-y-6"="
-                    peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
-                    "">Kata sandi</label>
+                    peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Kata sandi</label>
         </div>
+
         <div class="relative z-0 w-full mb-5 group">
             <input
                 type="password"
-                name="repeat_password"
-                id="floating_repeat_password"
+                name="password_confirmation"
+                id="password_confirmation"
                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" " required />
-      <label for="
-                floating_repeat_password" class="
+                <label for="
+                password_confirmation" class="
                 peer-focus:font-medium="peer-focus:font-medium"
                 absolute="absolute"
                 text-sm="text-sm"
@@ -104,59 +94,21 @@
                 top-3="top-3"
                 -z-10="-z-10"
                 origin-[0]="origin-[0]"
-                peer-focus:start-0="peer-focus:start-0"
-                rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
+                peer-focus:left-0="peer-focus:left-0"
                 peer-focus:text-blue-600="peer-focus:text-blue-600"
-                peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-                peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-                peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-                peer-focus:scale-75="peer-focus:scale-75"
-                peer-focus:-translate-y-6"="
-                peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
-                "">Konfrimasi kata sandi</label>
+                peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Konfirmasi kata sandi</label>
     </div>
-    <div class="grid md:grid-cols-2 md:gap-6">
-        <div class="relative z-0 w-full mb-5 group">
-            <input
-                type="text"
-                name="floating_first_name"
-                id="floating_first_name"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" " required />
-        <label for="
-                floating_first_name" class="
-                peer-focus:font-medium="peer-focus:font-medium"
-                absolute="absolute"
-                text-sm="text-sm"
-                text-gray-500="text-gray-500"
-                dark:text-gray-400="dark:text-gray-400"
-                duration-300="duration-300"
-                transform="transform"
-                -translate-y-6="-translate-y-6"
-                scale-75="scale-75"
-                top-3="top-3"
-                -z-10="-z-10"
-                origin-[0]="origin-[0]"
-                peer-focus:start-0="peer-focus:start-0"
-                rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
-                peer-focus:text-blue-600="peer-focus:text-blue-600"
-                peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-                peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-                peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-                peer-focus:scale-75="peer-focus:scale-75"
-                peer-focus:-translate-y-6"="
-                peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
-                "">Nama depan</label>
-    </div>
+
     <div class="relative z-0 w-full mb-5 group">
         <input
             type="text"
-            name="floating_last_name"
-            id="floating_last_name"
+            name="first_name"
+            id="first_name"
+            value="{{ old('first_name') }}"
             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" " required />
-        <label for="
-            floating_last_name" class="
+                <label for="
+            first_name" class="
             peer-focus:font-medium="peer-focus:font-medium"
             absolute="absolute"
             text-sm="text-sm"
@@ -169,29 +121,21 @@
             top-3="top-3"
             -z-10="-z-10"
             origin-[0]="origin-[0]"
-            peer-focus:start-0="peer-focus:start-0"
-            rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
+            peer-focus:left-0="peer-focus:left-0"
             peer-focus:text-blue-600="peer-focus:text-blue-600"
-            peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-            peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-            peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-            peer-focus:scale-75="peer-focus:scale-75"
-            peer-focus:-translate-y-6"="
-            peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
-            "">Nama belakang</label>
+            peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Nama depan</label>
 </div>
-</div>
-<div class="grid md:grid-cols-2 md:gap-6">
+
 <div class="relative z-0 w-full mb-5 group">
     <input
-        type="number"
-        name="floating_phone"
-        id="floating_phone"
+        type="text"
+        name="last_name"
+        id="last_name"
+        value="{{ old('last_name') }}"
         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=" "
-            required />
-        <label for="
-        floating_phone" class="
+        placeholder=" " required />
+                <label for="
+        last_name" class="
         peer-focus:font-medium="peer-focus:font-medium"
         absolute="absolute"
         text-sm="text-sm"
@@ -204,28 +148,21 @@
         top-3="top-3"
         -z-10="-z-10"
         origin-[0]="origin-[0]"
-        peer-focus:start-0="peer-focus:start-0"
-        rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
+        peer-focus:left-0="peer-focus:left-0"
         peer-focus:text-blue-600="peer-focus:text-blue-600"
-        peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-        peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-        peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-        peer-focus:scale-75="peer-focus:scale-75"
-        peer-focus:-translate-y-6"="
-        peer-focus:-translate-y-6""="peer-focus:-translate-y-6"
-        "">Nomor telepon</label>
+        peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Nama belakang</label>
 </div>
 
 <div class="relative z-0 w-full mb-5 group">
 <input
-    type="date"
-    name="floating_company"
-    id="floating_company"
+    type="text"
+    name="phone_number"
+    id="phone_number"
+    value="{{ old('phone_number') }}"
     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-    placeholder=" "
-        required />
-    <label for="
-    floating_company" class="
+    placeholder=" " required />
+                <label for="
+    phone_number" class="
     peer-focus:font-medium="peer-focus:font-medium"
     absolute="absolute"
     text-sm="text-sm"
@@ -238,21 +175,41 @@
     top-3="top-3"
     -z-10="-z-10"
     origin-[0]="origin-[0]"
-    peer-focus:start-0="peer-focus:start-0"
-    rtl:peer-focus:translate-x-1/4="rtl:peer-focus:translate-x-1/4"
+    peer-focus:left-0="peer-focus:left-0"
     peer-focus:text-blue-600="peer-focus:text-blue-600"
-    peer-focus:dark:text-blue-500="peer-focus:dark:text-blue-500"
-    peer-placeholder-shown:scale-100="peer-placeholder-shown:scale-100"
-    peer-placeholder-shown:translate-y-0="peer-placeholder-shown:translate-y-0"
-    peer-focus:scale-75="peer-focus:scale-75"
-    peer-focus:-translate-y-6"="
-    peer-focus:-translate-y-6""="peer-focus:-translate-y-6""">Tanggal lahir</label>
+    peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Nomor telepon</label>
 </div>
 
+<div class="relative z-0 w-full mb-5 group">
+<input
+type="date"
+name="birthdate"
+id="birthdate"
+value="{{ old('birthdate') }}"
+class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+placeholder=" " required />
+                <label for="
+birthdate" class="
+peer-focus:font-medium="peer-focus:font-medium"
+absolute="absolute"
+text-sm="text-sm"
+text-gray-500="text-gray-500"
+dark:text-gray-400="dark:text-gray-400"
+duration-300="duration-300"
+transform="transform"
+-translate-y-6="-translate-y-6"
+scale-75="scale-75"
+top-3="top-3"
+-z-10="-z-10"
+origin-[0]="origin-[0]"
+peer-focus:left-0="peer-focus:left-0"
+peer-focus:text-blue-600="peer-focus:text-blue-600"
+peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Tanggal lahir</label>
 </div>
+
 <button
 type="submit"
-class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
+class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Daftar</button>
 </form>
 </nav>
 </body>
