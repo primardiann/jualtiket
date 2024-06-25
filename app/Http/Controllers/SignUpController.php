@@ -37,8 +37,8 @@ class SignUpController extends Controller
             'role' => 'user', // Default role, change as necessary
         ]);
 
-        // Autentikasi pengguna setelah berhasil mendaftar
-        // Auth::login($user);
+        //Autentikasi pengguna setelah berhasil mendaftar
+        Auth::login($user);
 
         // Redirect ke halaman detail_pembayaran
         return redirect()->route('login.show');

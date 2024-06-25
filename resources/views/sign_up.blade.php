@@ -11,7 +11,7 @@
         <nav class="p-10">
             <form
                 method="POST"
-                action="{{ route('sign_up.post') }}"
+                action="{{ route('sign_up') }}"
                 class="max-w-md mx-auto">
                 @csrf
                 <center>

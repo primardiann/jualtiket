@@ -27,7 +27,18 @@ class LoginController extends Controller
         // } else {
         //     return redirect()->back()->with('error', 'Email atau password salah.');
         // }
+
+        
     }
+
+    // protected function authenticated(Request $request, $user)
+    // {
+    //     if ($user->role == 'admin') {
+    //         return redirect()->route('admin_tampilan_awal');
+    //     } elseif ($user->role == 'pengguna') {
+    //         return redirect()->route('detail_pembayaran');
+    //     }
+    // }
 
     public function detailPembayaran()
     {
@@ -38,5 +49,6 @@ class LoginController extends Controller
     {
         return view('admin_tampilan_awal');
     }
+    
 
 }

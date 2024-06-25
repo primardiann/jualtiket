@@ -173,7 +173,7 @@
             <body>
 
                 <!-- Tombol untuk menambahkan item baru -->
-                <a href="admin_tambah_konser" class="addItemButton">
+                <a href="{{ route('konser.create') }}" class="addItemButton">
                     <span class="addItemIcon">
                         <ol>+</ol>
                         <ol>Menambahkan Tiket Konser</ol>
