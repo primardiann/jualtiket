@@ -6,7 +6,6 @@ use App\Http\Controllers\DeskripsiController;
 use App\Http\Controllers\KategoriTiketController;
 use App\Http\Controllers\KonserController;
 use App\Http\Controllers\SignUpController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TiketController;
 
 Route::get('/', function () {
