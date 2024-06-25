@@ -9,6 +9,8 @@ use App\Http\Controllers\KonserController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\AdminController as ControllersAdminController;
+use App\Http\Controllers\PembayaranController as ControllersPembayaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +53,10 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 
     
 // Route for AdminController
-Route::get('/admin/tampilan-awal', 'AdminController@index')->name('admin_tampilan_awal');
+Route::get('/admin/tampilan-awal', [ControllersAdminController::class, 'index'])->name('admin_tampilan_awal');
 
 // Route for PembayaranController
-Route::get('/pembayaran/detail', 'PembayaranController@detail')->name('detail_pembayaran');
+Route::get('/pembayaran/detail', [ControllersPembayaranController::class, 'detail'])->name('detail_pembayaran');
 
 // Route daftar
 Route::get('/sign_up', [SignUpController::class, 'showRegistrationForm'])->name('sign_up');
@@ -73,7 +75,6 @@ Route::get('deskripsi', [DeskripsiController::class, 'show'])->name('deskripsi')
 // Route untuk halaman kategori tiket
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori_tiket');
 
-Route::get('/kategori-tiket', [KategoriTiketController::class, 'index'])->name('kategori_tiket');
 Route::post('/beli-tiket', [KategoriTiketController::class, 'beliTiket'])->name('beli_tiket');
 
 //Admin
@@ -91,10 +92,10 @@ Route::get('/admin/{konser}', [KonserController::class, 'show'])->name('konser.s
 Route::get('/admin/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
 Route::put('/admin/{konser}', [KonserController::class, 'update'])->name('konser.update');
 Route::delete('/admin/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
-Route::resource('konser', KonserController::class);
 
 
-Route::get('/admin_edit', [TiketController::class, 'index'])->name('index');
+
+// Route::get('/admin_edit', [TiketController::class, 'index'])->name('index');
 
 Route::get('/tikets', [TiketController::class, 'index'])->name('tikets.index');
 Route::get('/tikets/create', [TiketController::class, 'create'])->name('tikets.create');
