@@ -14,12 +14,12 @@
                     <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src="images/Logo.jpg" class="h-8" alt="Logo Konser"/>
                         <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Concert.tix</span>
+                            class="self-center text-2xl font-semibold whitespace-nowrap">Concert.tix</span>
                     </a>
                     <button
                         data-collapse-toggle="navbar-default"
                         type="button"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                         aria-controls="navbar-default"
                         aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
@@ -39,11 +39,11 @@
                     </button>
                     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                         <ul
-                            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900">
 
                             <li>
                                 <div
-                                    class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                    class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full">
                                     <svg
                                         class="absolute w-12 h-12 text-gray-400 -left-1"
                                         fill="currentColor"
@@ -72,7 +72,7 @@
                         type="email"
                         name="floating_email"
                         id="floating_email"
-                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" "
                 required />
             <label for="
@@ -81,7 +81,7 @@
                         absolute="absolute"
                         text-sm="text-sm"
                         text-gray-500="text-gray-500"
-                        dark:text-gray-400="dark:text-gray-400"
+                       "dark:text-gray-400"
                         duration-300="duration-300"
                         transform="transform"
                         -translate-y-6="-translate-y-6"
@@ -108,7 +108,7 @@
                         type="text"
                         name="floating_first_name"
                         id="floating_first_name"
-                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" " required maxlength="
                         50" /> <!-- Mengatur maksimum panjang menjadi 50 karakter -->
                     <label for="
@@ -117,7 +117,7 @@
                         absolute="absolute"
                         text-sm="text-sm"
                         text-gray-500="text-gray-500"
-                        dark:text-gray-400="dark:text-gray-400"
+                       "dark:text-gray-400"
                         duration-300="duration-300"
                         transform="transform"
                         -translate-y-6="-translate-y-6"
@@ -141,7 +141,7 @@
                     type="text"
                     name="floating_last_name"
                     id="floating_last_name"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" " required maxlength="
                     50" /> <!-- Mengatur maksimum panjang menjadi 50 karakter -->
                     <label for="
@@ -150,7 +150,7 @@
                     absolute="absolute"
                     text-sm="text-sm"
                     text-gray-500="text-gray-500"
-                    dark:text-gray-400="dark:text-gray-400"
+                   "dark:text-gray-400"
                     duration-300="duration-300"
                     transform="transform"
                     -translate-y-6="-translate-y-6"
@@ -178,7 +178,7 @@
             type="number"
             name="floating_phone"
             id="floating_phone"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
                     required />
                 <label for="
@@ -187,7 +187,7 @@
             absolute="absolute"
             text-sm="text-sm"
             text-gray-500="text-gray-500"
-            dark:text-gray-400="dark:text-gray-400"
+           "dark:text-gray-400"
             duration-300="duration-300"
             transform="transform"
             -translate-y-6="-translate-y-6"
@@ -213,10 +213,10 @@
 
 <button
     type="submit"
-    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">Simpan</button>
 <button
     type="button"
-    class="text-white bg-gray-500 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray -800 ml-4">Kembali</button>
+    class="text-white bg-gray-500 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 -800 ml-4">Kembali</button>
 </div>
 </form>
 

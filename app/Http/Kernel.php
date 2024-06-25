@@ -66,10 +66,12 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
 
-    //memkasa tamu login
-    protected $routeMiddleware = [
-        // ...
-        'auth' => \App\Http\Middleware\Authenticate::class,
-    ];
+    // //memkasa tamu login
+    // protected $routeMiddleware = [
+    //     // ...
+    //     'auth' => \App\Http\Middleware\Authenticate::class,
+    // ];
+
+    
     
 }

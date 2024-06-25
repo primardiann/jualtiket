@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DeskripsiController;
@@ -7,6 +8,23 @@ use App\Http\Controllers\KategoriTiketController;
 use App\Http\Controllers\KonserController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TiketController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 
 Route::get('/', function () {
     return view('tampilan_awal');
@@ -17,6 +35,21 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'processLogin'])->name('login');
 
+// Route untuk form login
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+    ->middleware('guest')
+    ->name('login');
+
+// Route untuk proses login
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+    ->middleware('guest');
+
+// Route untuk logout
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('logout');
+
+    
 // Route for AdminController
 Route::get('/admin/tampilan-awal', 'AdminController@index')->name('admin_tampilan_awal');
 
@@ -26,6 +59,12 @@ Route::get('/pembayaran/detail', 'PembayaranController@detail')->name('detail_pe
 // Route daftar
 Route::get('/sign_up', [SignUpController::class, 'showRegistrationForm'])->name('sign_up');
 Route::post('/sign_up', [SignUpController::class, 'register'])->name('sign_up.post');
+Route::get('/register', [SignUpController::class, 'showRegistrationForm'])
+    ->middleware('guest')
+    ->name('register');
+
+Route::post('/register', [SignUpController::class, 'register'])
+    ->middleware('guest');
 
 // Route Pengguna Setelah Login
 // Deskripsi
@@ -66,5 +105,21 @@ Route::put('/tikets/{tiket}', [TiketController::class, 'update'])->name('tikets.
 Route::delete('/tikets/{tiket}', [TiketController::class, 'destroy'])->name('tikets.destroy');
 Route::post('/calculate', [TiketController::class, 'calculate'])->name('tickets.calculate');
 
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('detail_pembayaran');
+//     })->name('dashboard');
+// });
 
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+
+require __DIR__.'/auth.php';

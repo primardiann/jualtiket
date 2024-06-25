@@ -9,12 +9,12 @@
     </head>
 
     <nav
-        class="fixed top-0 z-50 w-full bg-white border-b border-gray-400 dark:bg-gray-800 dark:border-gray-700">
+        class="fixed top-0 z-50 w-full bg-white border-b border-gray-400">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center justify-start rtl:justify-end">
                     <svg
-                        class="w-6 h-6 text-gray-800 dark:text-white"
+                        class="w-6 h-6 text-gray-800"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -32,7 +32,7 @@
                         data-drawer-toggle="logo-sidebar"
                         aria-controls="logo-sidebar"
                         type="button"
-                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
                         <span class="sr-only">Open sidebar</span>
                         <svg
                             class="w-6 h-6"
@@ -48,7 +48,7 @@
                     </button>
                     <a href="https://flowbite.com" class="flex ms-2 md:me-24">
                         <img class="w-12 h-12 rounded-full" src="images/Logo.jpg" alt="Rounded avatar">
-                        <span class=" text-4xl font-semibold whitespace-nowrap dark:text-white">Concert.tix</span>
+                        <span class=" text-4xl font-semibold whitespace-nowrap">Concert.tix</span>
                     </a>
                 </div>
                 <div class="flex items-center">
@@ -56,7 +56,7 @@
                         <div>
                             <button
                                 type="button"
-                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300"
                                 aria-expanded="false"
                                 data-dropdown-toggle="dropdown-user">
                                 <span class="sr-only">Open user menu</span>
@@ -67,14 +67,14 @@
                             </button>
                         </div>
                         <div
-                            class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                            class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow"
                             id="dropdown-user">
                             <div class="px-4 py-3" role="none">
-                                <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                <p class="text-sm text-gray-900" role="none">
                                     Neil Sims
                                 </p>
                                 <p
-                                    class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                                    class="text-sm font-medium text-gray-900 truncate"
                                     role="none">
                                     neil.sims@flowbite.com
                                 </p>
@@ -90,14 +90,14 @@
         class="fixed justify-items-center align-items-center top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-blue-500 border-r border-gray-400 sm:translate-x-0"
         aria-label="Sidebar">
         <div
-            class="h-full px-3 pb-4 overflow-y-auto dark:bg-white-700 dark:bg-gray-800">
+            class="h-full px-3 pb-4 overflow-y-auto">
             <ul class="space-y-2 font-medium">
                 <li>
                     <a
                         href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
                         <svg
-                            class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="currentColor"
@@ -114,9 +114,9 @@
                 <li>
                     <a
                         href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
                         <svg
-                            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="currentColor"
@@ -127,7 +127,7 @@
                         <span
                             class="flex text-center justify-content-center align-items-center p-3 text-gray-900 rounded-lg group ms-3">Penambahan konser Baru</span>
                         {{-- <span
-                            class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> --}}
+                            class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full">Pro</span> --}}
                     </a>
                 </li>
 
@@ -237,7 +237,7 @@
                     <div class="container flex justify-content: flex-end">
                         <button
                             type="submit"
-                            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Unggah</button>
+                            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Unggah</button>
                     </div>
                 </center>
             </form>
@@ -289,14 +289,14 @@
                 <center>
                     {{-- <button
                         type="submit"
-                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">
                         <span class="mr-1">+</span>
                         <span>Tambah Kategori</span>
                     </button> --}}
 
                     <button
                         type="submit"
-                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Unggah</button>
+                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">Unggah</button>
 
                 </center>
 
@@ -304,14 +304,14 @@
             <center>
                 {{-- <button
                         type="submit"
-                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">
                         <span class="mr-1">+</span>
                         <span>Tambah Kategori</span>
                     </button> --}}
 
                 {{-- <button
                         type="submit"
-                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Unggah</button> --}}
+                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">Unggah</button> --}}
 
             </center>
 

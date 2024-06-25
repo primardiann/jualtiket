@@ -7,14 +7,14 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     </head>
 
-    <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <nav class="border-gray-200 bg-gray-50">
         <div
             class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
 
                 <img class="w-10 h-10 rounded-full" src="images/Logo.jpg" alt="Rounded avatar">
 
-                <span class="self-center text-2xl font-inter whitespace-nowrap dark:text-white">
+                <span class="self-center text-2xl font-inter whitespace-nowrap">
                     <b>Concert.tix</b>
                 </span>
             </a>
@@ -57,7 +57,7 @@
 
                 </thead>
 
-                <tr class="bg-white dark:bg-gray-800">
+                <tr class="bg-white">
                     <td class="px-6 py-4">
                         XXXX123XX
                     </td>
@@ -75,9 +75,9 @@
                 </h2>
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table
-                        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        class="w-full text-sm text-left rtl:text-right text-gray-500">
                         <thead
-                            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            class="text-xs text-gray-700 uppercase bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     No.
@@ -98,7 +98,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white dark:bg-gray-800">
+                            <tr class="bg-white">
                                 <td class="px-6 py-4">
                                     1
                                 </td>
@@ -115,7 +115,7 @@
                                     Rp.1.000.000,-
                                 </td>
                             </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <tr class="bg-white border-b">
                                 <td class="px-6 py-4">
                                     2
                                 </td>
@@ -132,7 +132,7 @@
                                     Rp.1.000.000,-
                                 </td>
                             </tr>
-                            <tr class="bg-white dark:bg-gray-800">
+                            <tr class="bg-white">
                                 <td class="px-6 py-4">
                                     3
                                 </td>
@@ -149,7 +149,7 @@
                                     Rp.2.000.000,-
                                 </td>
                             </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <tr class="bg-white border-b">
                                 <td class="px-6 py-4">
                                     4
                                 </td>
@@ -166,7 +166,7 @@
                                     Rp.2.000.000,-
                                 </td>
                             </tr>
-                            <tr class="bg-white dark:bg-gray-800">
+                            <tr class="bg-white">
                                 <td class="px-6 py-4"></td>
                                 <td class="px-6 py-4"></td>
                                 <td class="px-6 py-4"></td>

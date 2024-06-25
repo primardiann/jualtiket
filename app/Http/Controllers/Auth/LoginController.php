@@ -17,7 +17,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('auth.login'); // Ensure you have a login view
+        return view('login'); // Ensure you have a login view
     }
 
     /**
@@ -50,4 +50,9 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/'); // Adjust the redirect URL as needed
     }
+
+    protected function redirectTo()
+{
+    return route('dashboard'); // Ganti 'dashboard' dengan route yang sesuai untuk halaman login jika belum login
+}
 }

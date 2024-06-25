@@ -11,22 +11,22 @@
     <a
         href="https://flowbite.com"
         class="flex items-center space-x-4 rtl:space-x-reverse">
-        <nav class="border-gray-200 bg-gray-100 dark:bg-gray-800 dark:border-gray-700">
+        <nav class="border-gray-200 bg-gray-100">
             <div
                 class="max-w-screen-xm flex flex-wrap items-center justify-between mx-auto p-6"></svg>
             <img class="w-12 h-12 rounded-full" src="images/tiket.jpg" alt="Rounded avatar">
-            <span class=" text-4xl font-bold whitespace-nowrap dark:text-white">Concert.tix</span>
+            <span class=" text-4xl font-bold whitespace-nowrap">Concert.tix</span>
         </a>
 
         <form class="max-w-md mx-auto">
             <label
                 for="default-search"
-                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
             <div class="relative">
                 <div
                     class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                     <svg
-                        class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                        class="w-4 h-4 text-gray-500"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -39,10 +39,10 @@
             class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <a
                 href="#"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">admin</a>
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 focus:outline-none">admin</a>
 
             <div
-                class="relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-600">
+                class="relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full">
                 <svg
                     class="absolute w-12 h-12 text-gray-400 -left-1"
                     fill="currentColor"
@@ -58,7 +58,7 @@
             <button
                 data-collapse-toggle="mega-menu-icons"
                 type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 aria-controls="mega-menu-icons"
                 aria-expanded="false"></button>
         </div>
@@ -80,25 +80,25 @@
         <br>
         <ol>
             <span
-                class=" text-2xl font-bold whitespace-nowrap dark:text-white"
+                class=" text-2xl font-bold whitespace-nowrap"
                 style="margin-left: 100px">Konser Aktif</span>
         </ol>
         <br>
             <div class="flex gap-5" style="margin-left: 100px">
                 <div
-                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                     <a href="#">
                         <img class="rounded-t-lg" src="images/taylor.jpg" alt=""/>
                     </a>
                     <div class="p-5">
                         <a href="#">
                             <h5
-                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">The Eras Tour</h5>
+                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Eras Tour</h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">19 Februari 2024</p>
+                        <p class="mb-3 font-normal text-gray-700">19 Februari 2024</p>
                         <a
                             href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
                             Harga Tiket
 
                             <path

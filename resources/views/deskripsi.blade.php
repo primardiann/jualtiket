@@ -11,11 +11,11 @@
     <a
         href="https://flowbite.com"
         class="flex items-center space-x-4 rtl:space-x-reverse">
-        <nav class="border-gray-200 bg-gray-100 dark:bg-gray-800 dark:border-gray-700">
+        <nav class="border-gray-200 bg-gray-100">
             <div
                 class="max-w-screen-xm flex flex-wrap items-center justify-between mx-auto p-6">
                 <svg
-                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    class="w-6 h-6 text-gray-800"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -28,16 +28,16 @@
                         d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3"/>
                 </svg>
                 <img class="w-12 h-12 rounded-full" src="images/Logo.jpg" alt="Rounded avatar">
-                <span class=" text-4xl font-semibold whitespace-nowrap dark:text-white">Concert.tix</span>
+                <span class=" text-4xl font-semibold whitespace-nowrap">Concert.tix</span>
             </a>
             <div
                 class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <a
                     href="#"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">tiket Saya</a>
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 focus:outline-none">tiket Saya</a>
 
                 <div
-                    class="relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-600">
+                    class="relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full">
                     <svg
                         class="absolute w-12 h-12 text-gray-400 -left-1"
                         fill="currentColor"
@@ -53,7 +53,7 @@
                 <button
                     data-collapse-toggle="mega-menu-icons"
                     type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="mega-menu-icons"
                     aria-expanded="false"></button>
             </div>
@@ -76,7 +76,7 @@
 
             <div
                 id="toast-top-left"
-                class=" flex w-full max-w-xl p-4 top-7 left-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
+                class=" flex w-full max-w-xl p-4 top-7 left-5 space-x"
                 role="alert">
                 <div class="">
                     <a href="#">
@@ -86,16 +86,16 @@
                     <div class="p-4">
 
                         <h5
-                            class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Deskripsi</h5>
+                            class="mb-5 text-2xl font-bold tracking-tight text-gray-900">Deskripsi</h5>
                         <ol>Konser The Eras Tour dirancang menjadi sebuah konser yang sangat megah dan
                             memanjakan penontonnya. Setting panggung yang luas member kesempatan pada Taylor
                             Swift untuk tampil maksimal bersama para penari latar.</ol>
 
                         <h5
-                            class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Syarat dan Ketentuan
+                            class="mb-5 text-2xl font-bold tracking-tight text-gray-900">Syarat dan Ketentuan
                         </h5>
 
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        <p class="mb-3 font-normal text-gray-700">
                             <ol>
                                 <li>- Anak berusia tiga tahun atau lebih mesti beli tiket</li>
                                 <li>- Tak perlu tiket untuk anak di bawah tiga tahun</li>
@@ -110,16 +110,16 @@
 
                         <div
                             id="toast-top-right"
-                            class="absolute flex w-full max-w-xl p-0 top-7 right-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
+                            class="absolute flex w-full max-w-xl p-0 top-7 right-5 space-x"
                             role="alert">
                             <div
-                                class="w-full max-w-sm p-0 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                                <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">THE ERAS TOUR</h5>
-                                <div class="flex items-baseline text-gray-900 dark:text-white"></div>
+                                class="w-full max-w-sm p-0 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
+                                <h5 class="mb-4 text-xl font-medium text-gray-500">THE ERAS TOUR</h5>
+                                <div class="flex items-baseline text-gray-900"></div>
                                 <ul role="list" class="space-y-5 my-6">
                                     <li class="flex items-center">
                                         <svg
-                                            class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
+                                            class="flex-shrink-0 w-4 h-4 text-blue-700"
                                             aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="currentColor"
@@ -128,11 +128,11 @@
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">19 Februari 2024</span>
+                                            class="text-base font-normal leading-tight text-gray-500 ms-3">19 Februari 2024</span>
                                     </li>
                                     <li class="flex">
                                         <svg
-                                            class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
+                                            class="flex-shrink-0 w-4 h-4 text-blue-700"
                                             aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="currentColor"
@@ -141,11 +141,11 @@
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">20.00 - 00.00 WIB</span>
+                                            class="text-base font-normal leading-tight text-gray-500 ms-3">20.00 - 00.00 WIB</span>
                                     </li>
                                     <li class="flex">
                                         <svg
-                                            class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
+                                            class="flex-shrink-0 w-4 h-4 text-blue-700"
                                             aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="currentColor"
@@ -154,14 +154,14 @@
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">SINGAPURA,Asia Tenggara</span>
+                                            class="text-base font-normal leading-tight text-gray-500 ms-3">SINGAPURA,Asia Tenggara</span>
                                     </li>
                                     <p class="text-1xl font-bold text-blue-600 ">TAYLOR SWIFT</p>
                                 </ul>
                                 <a
                                     href="{{ route('kategori_tiket') }}"
                                     type="button"
-                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Kategori Tiket
+                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Kategori Tiket
                                 </a>
                             </div>
                         </div>
@@ -169,12 +169,12 @@
                     </div>
 
                     <footer
-                        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-                        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023
+                        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6">
+                        <span class="text-sm text-gray-500 sm:text-center">© 2023
                             <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
                         </span>
                         <ul
-                            class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                            class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0">
                             <li>
                                 <a href="#" class="hover:underline me-4 md:me-6">About</a>
                             </li>
@@ -190,14 +190,14 @@
                         </ul>
                     </footer>
 
-                    <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+                    <footer class="bg-white rounded-lg shadow m-4">
                         <div
                             class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-                            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023
+                            <span class="text-sm text-gray-500 sm:text-center">© 2023
                                 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
                             </span>
                             <ul
-                                class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                                class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0">
                                 <li>
                                     <a href="#" class="hover:underline me-4 md:me-6">About</a>
                                 </li>
