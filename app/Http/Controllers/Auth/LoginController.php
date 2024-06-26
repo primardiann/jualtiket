@@ -10,7 +10,7 @@ use App\Http\Requests\Auth\LoginRequest;
 
 class LoginController extends Controller
 {
-     /**
+    /**
      * Show the login form.
      *
      * @return \Illuminate\View\View
@@ -28,16 +28,37 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $request)
     {
+        // $credentials = $request->only('email', 'password');
+
+        // if (Auth::attempt($credentials)) {
+        //     // Authentication passed...
+        //     return redirect()->intended('dashboard'); // Adjust the intended URL as needed
+        // }
+
+        // return back()->withErrors([
+        //     'email' => 'The provided credentials do not match our records.',
+        // ])->withInput($request->only('email'));
+
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('dashboard'); // Adjust the intended URL as needed
+            $user = Auth::user();
+
+            // Redirect based on user role
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.dashboard'); // Adjust the admin dashboard route as needed
+            } else {
+                return redirect()->route('user.dashboard'); // Adjust the user dashboard route as needed
+            }
         }
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->withInput($request->only('email'));
+
+        
     }
 
     /**

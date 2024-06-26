@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index()
+    public function showDetailPembayaran()
     {
-        return view('kategori_tiket');
+        return view('detail_pembayaran');
     }
 }
