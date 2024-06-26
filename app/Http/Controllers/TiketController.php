@@ -26,13 +26,13 @@ class TiketController extends Controller
     public function create()
     {
     
-        return view('admin_tambah_tiket');
+        return view('admin_tambah_konser');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTiketRequest $request)
+    public function store(Request $request)
     {
         // Validasi input
         $request->validate([
@@ -63,6 +63,7 @@ class TiketController extends Controller
      */
     public function edit(Tiket $tiket)
 {
+    $tiket = Tiket::findOrFail($tiket->id);
     return view('admin_edit_tiket', compact('tiket'));
 }
 
@@ -78,9 +79,18 @@ class TiketController extends Controller
             'stock' => 'required|integer|min:0',
         ]);
 
+        $tiket = Tiket::findOrFail($tiket->id);
+
         // Simpan perubahan pada tiket ke dalam database
-        $tiket->update($request->all());
-        return redirect()->route('tikets.show', $tiket->id);
+        // $tiket->update($request->all());
+
+        $tiket->update([
+            'category' => $request->category,
+            'price' => $request->price,
+            'stock' => $request->stock
+        ]);
+
+        return redirect()->route('tikets.index');
     }
 
     /**
@@ -88,9 +98,11 @@ class TiketController extends Controller
      */
     public function destroy(Tiket $tiket)
     {
+        $tiket = Tiket::findOrFail($tiket->id);
+
         // Hapus tiket dari database
         $tiket->delete();
-        return redirect()->route('admin_tampilan_awal');
+        return redirect()->route('tikets.index');
     }
 
 

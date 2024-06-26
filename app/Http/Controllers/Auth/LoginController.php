@@ -52,9 +52,4 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/'); // Adjust the redirect URL as needed
     }
-
-    protected function redirectTo()
-{
-    return route('login'); // Ganti 'dashboard' dengan route yang sesuai untuk halaman login jika belum login
-}
 }

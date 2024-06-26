@@ -157,7 +157,7 @@
 
 <div class="relative z-0 w-full mb-5 group">
 <input
-    type="text"
+    type="number"
     name="phone_number"
     id="phone_number"
     value="{{ old('phone_number') }}"

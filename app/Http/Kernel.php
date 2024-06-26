@@ -67,10 +67,10 @@ class Kernel extends HttpKernel
     ];
 
     // //memkasa tamu login
-    // protected $routeMiddleware = [
-    //     // ...
-    //     'auth' => \App\Http\Middleware\Authenticate::class,
-    // ];
+    protected $routeMiddleware = [
+        // ...
+        'auth' => \App\Http\Middleware\Authenticate::class,
+    ];
 
     
     

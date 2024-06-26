@@ -15,9 +15,9 @@ class Authenticate
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-            return redirect('/detail_pembayaran'); // Ganti '/home' dengan halaman setelah login
+            return $next($request);
+            // return redirect('/detail_pembayaran'); // Ganti '/home' dengan halaman setelah login
         }
 
-        return $next($request);
     }
 }
