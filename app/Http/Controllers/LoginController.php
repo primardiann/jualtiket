@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Login;
 use App\Models\User;
 
 class LoginController extends Controller
@@ -17,29 +16,8 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
         $user = User::where('email', $credentials['email'])->first();
-
-        // if ($user->password === $credentials['password']) {
-        //     if ($user->role === 'admin') {
-        //         return redirect()->route('admin_tampilan_awal');
-        //     } else {
-        //         return redirect()->route('detail_pembayaran');
-        //     }
-        // } else {
-        //     return redirect()->back()->with('error', 'Email atau password salah.');
-        // }
-
-        
     }
-
-    // protected function authenticated(Request $request, $user)
-    // {
-    //     if ($user->role == 'admin') {
-    //         return redirect()->route('admin_tampilan_awal');
-    //     } elseif ($user->role == 'pengguna') {
-    //         return redirect()->route('detail_pembayaran');
-    //     }
-    // }
-
+    
     public function detailPembayaran()
     {
         return view('detail_pembayaran');

@@ -17,6 +17,7 @@ class KonserController extends Controller
         return view('admin_tampilan_awal', compact('konsers'));
     }
     
+    
 
     /**
      * Show the form for creating a new resource.
@@ -75,10 +76,11 @@ class KonserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Konser $konser)
-    {
-        return view('admin_data_tiket', compact('konser'));
-    }
+    public function show($id)
+{
+    $konser = Konser::findOrFail($id); // Mengambil data konser berdasarkan ID
+    return view('data_pembeli', compact('konser'));
+}
 
     /**
      * Show the form for editing the specified resource.

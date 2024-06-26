@@ -1,14 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DeskripsiController;
 use App\Http\Controllers\KategoriTiketController;
 use App\Http\Controllers\KonserController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TiketController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\AdminController as ControllersAdminController;
 use App\Http\Controllers\PembayaranController as ControllersPembayaranController;
 
@@ -23,33 +20,9 @@ use App\Http\Controllers\PembayaranController as ControllersPembayaranController
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
 Route::get('/', function () {
     return view('tampilan_awal');
 });
-
-
-// // Route login
-Route::get('/login', [LoginController::class, 'show'])->name('login');
-Route::post('/login', [LoginController::class, 'processLogin'])->name('login');
-
-// Route untuk form login
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])
-    ->middleware('guest')
-    ->name('login');
-
-// Route untuk proses login
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-    ->middleware('guest');
-
-// Route untuk logout
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('logout');
 
     
 // Route for AdminController
@@ -61,27 +34,16 @@ Route::get('/pembayaran/detail', [ControllersPembayaranController::class, 'detai
 // Route daftar
 Route::get('/sign_up', [SignUpController::class, 'showRegistrationForm'])->name('sign_up');
 Route::post('/sign_up', [SignUpController::class, 'register'])->name('sign_up.post');
-Route::get('/register', [SignUpController::class, 'showRegistrationForm'])
-    ->middleware('guest')
-    ->name('register');
 
-Route::post('/register', [SignUpController::class, 'register'])
-    ->middleware('guest');
-
-// Route Pengguna Setelah Login
 // Deskripsi
 Route::get('deskripsi', [DeskripsiController::class, 'show'])->name('deskripsi');
 
 // Route untuk halaman kategori tiket
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori_tiket');
-
 Route::post('/beli-tiket', [KategoriTiketController::class, 'beliTiket'])->name('beli_tiket');
 
 //Admin
 // routes/web.php
-
-
-
 Route::get('/admin_home', [KonserController::class, 'index'])->name('index');
 
 //CRUD
@@ -92,10 +54,6 @@ Route::get('/admin/{konser}', [KonserController::class, 'show'])->name('konser.s
 Route::get('/admin/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
 Route::put('/admin/{konser}', [KonserController::class, 'update'])->name('konser.update');
 Route::delete('/admin/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
-
-
-
-// Route::get('/admin_edit', [TiketController::class, 'index'])->name('index');
 
 Route::get('/tikets', [TiketController::class, 'index'])->name('tikets.index');
 Route::get('/tikets/create', [TiketController::class, 'create'])->name('tikets.create');

@@ -16,7 +16,7 @@ class TiketController extends Controller
     
         {
             $tikets = Tiket::all();
-            return view('kategori_tiket', compact('tikets'));
+            return view('admin_data_tiket', compact('tikets'));
         }
     
 
@@ -55,7 +55,7 @@ class TiketController extends Controller
      */
     public function show(Tiket $tiket)
     {
-        return view('admin_data_tiket', compact('tiket'));
+        return view('data_pembeli', compact('tiket'));
     }
 
     /**

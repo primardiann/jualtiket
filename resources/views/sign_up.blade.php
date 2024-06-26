@@ -9,10 +9,7 @@
     </head>
     <body>
         <nav class="p-10">
-            <form
-                method="POST"
-                action="{{ route('register') }}"
-                class="max-w-md mx-auto">
+            <form method="POST" action="{{ route('register') }}" class="max-w-md mx-auto">
                 @csrf
                 <center>
                     <h5 class="text-xl font-medium text-gray-900">Daftar</h5>
@@ -34,7 +31,7 @@
                         absolute="absolute"
                         text-sm="text-sm"
                         text-gray-500="text-gray-500"
-                       "dark:text-gray-400"
+                        "dark:text-gray-400"
                         duration-300="duration-300"
                         transform="transform"
                         -translate-y-6="-translate-y-6"
@@ -44,7 +41,8 @@
                         origin-[0]="origin-[0]"
                         peer-focus:left-0="peer-focus:left-0"
                         peer-focus:text-blue-600="peer-focus:text-blue-600"
-                        peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Alamat email</label>
+                        peer-focus:dark:text-blue-500"="
+                        peer-focus:dark:text-blue-500""="peer-focus:dark:text-blue-500""">Alamat email</label>
             </div>
 
             <div class="relative z-0 w-full mb-5 group">
@@ -60,7 +58,7 @@
                     absolute="absolute"
                     text-sm="text-sm"
                     text-gray-500="text-gray-500"
-                   "dark:text-gray-400"
+                    "dark:text-gray-400"
                     duration-300="duration-300"
                     transform="transform"
                     -translate-y-6="-translate-y-6"
@@ -70,7 +68,8 @@
                     origin-[0]="origin-[0]"
                     peer-focus:left-0="peer-focus:left-0"
                     peer-focus:text-blue-600="peer-focus:text-blue-600"
-                    peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Kata sandi</label>
+                    peer-focus:dark:text-blue-500"="
+                    peer-focus:dark:text-blue-500""="peer-focus:dark:text-blue-500""">Kata sandi</label>
         </div>
 
         <div class="relative z-0 w-full mb-5 group">
@@ -86,7 +85,7 @@
                 absolute="absolute"
                 text-sm="text-sm"
                 text-gray-500="text-gray-500"
-               "dark:text-gray-400"
+                "dark:text-gray-400"
                 duration-300="duration-300"
                 transform="transform"
                 -translate-y-6="-translate-y-6"
@@ -96,7 +95,8 @@
                 origin-[0]="origin-[0]"
                 peer-focus:left-0="peer-focus:left-0"
                 peer-focus:text-blue-600="peer-focus:text-blue-600"
-                peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Konfirmasi kata sandi</label>
+                peer-focus:dark:text-blue-500"="
+                peer-focus:dark:text-blue-500""="peer-focus:dark:text-blue-500""">Konfirmasi kata sandi</label>
     </div>
 
     <div class="relative z-0 w-full mb-5 group">
@@ -113,7 +113,7 @@
             absolute="absolute"
             text-sm="text-sm"
             text-gray-500="text-gray-500"
-           "dark:text-gray-400"
+            "dark:text-gray-400"
             duration-300="duration-300"
             transform="transform"
             -translate-y-6="-translate-y-6"
@@ -123,7 +123,8 @@
             origin-[0]="origin-[0]"
             peer-focus:left-0="peer-focus:left-0"
             peer-focus:text-blue-600="peer-focus:text-blue-600"
-            peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Nama depan</label>
+            peer-focus:dark:text-blue-500"="
+            peer-focus:dark:text-blue-500""="peer-focus:dark:text-blue-500""">Nama depan</label>
 </div>
 
 <div class="relative z-0 w-full mb-5 group">
@@ -140,7 +141,7 @@
         absolute="absolute"
         text-sm="text-sm"
         text-gray-500="text-gray-500"
-       "dark:text-gray-400"
+        "dark:text-gray-400"
         duration-300="duration-300"
         transform="transform"
         -translate-y-6="-translate-y-6"
@@ -150,7 +151,8 @@
         origin-[0]="origin-[0]"
         peer-focus:left-0="peer-focus:left-0"
         peer-focus:text-blue-600="peer-focus:text-blue-600"
-        peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Nama belakang</label>
+        peer-focus:dark:text-blue-500"="
+        peer-focus:dark:text-blue-500""="peer-focus:dark:text-blue-500""">Nama belakang</label>
 </div>
 
 <div class="relative z-0 w-full mb-5 group">
@@ -167,7 +169,7 @@
     absolute="absolute"
     text-sm="text-sm"
     text-gray-500="text-gray-500"
-   "dark:text-gray-400"
+    "dark:text-gray-400"
     duration-300="duration-300"
     transform="transform"
     -translate-y-6="-translate-y-6"
@@ -177,7 +179,8 @@
     origin-[0]="origin-[0]"
     peer-focus:left-0="peer-focus:left-0"
     peer-focus:text-blue-600="peer-focus:text-blue-600"
-    peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Nomor telepon</label>
+    peer-focus:dark:text-blue-500"="
+    peer-focus:dark:text-blue-500""="peer-focus:dark:text-blue-500""">Nomor telepon</label>
 </div>
 
 <div class="relative z-0 w-full mb-5 group">
@@ -193,7 +196,8 @@ birthdate" class="
 peer-focus:font-medium="peer-focus:font-medium"
 absolute="absolute"
 text-sm="text-sm"
-text-gray-500="text-gray-500""dark:text-gray-400"
+text-gray-500="text-gray-500"
+"dark:text-gray-400"
 duration-300="duration-300"
 transform="transform"
 -translate-y-6="-translate-y-6"
@@ -203,7 +207,8 @@ top-3="top-3"
 origin-[0]="origin-[0]"
 peer-focus:left-0="peer-focus:left-0"
 peer-focus:text-blue-600="peer-focus:text-blue-600"
-peer-focus:dark:text-blue-500"="peer-focus:dark:text-blue-500"">Tanggal lahir</label>
+peer-focus:dark:text-blue-500"="
+peer-focus:dark:text-blue-500""="peer-focus:dark:text-blue-500""">Tanggal lahir</label>
 </div>
 
 <button

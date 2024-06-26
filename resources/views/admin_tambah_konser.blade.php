@@ -8,8 +8,7 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     </head>
 
-    <nav
-        class="fixed top-0 z-50 w-full bg-white border-b border-gray-400">
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-400">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center justify-start rtl:justify-end">
@@ -47,7 +46,8 @@
                         </svg>
                     </button>
                     <a href="https://flowbite.com" class="flex ms-2 md:me-24">
-                        <img class="w-12 h-12 rounded-full" src="images/Logo.jpg" alt="Rounded avatar">
+                        <img class="w-12 h-12 rounded-full" src="/images/Logo.jpg" alt="Rounded avatar">
+
                         <span class=" text-4xl font-semibold whitespace-nowrap">Concert.tix</span>
                     </a>
                 </div>
@@ -73,9 +73,7 @@
                                 <p class="text-sm text-gray-900" role="none">
                                     Neil Sims
                                 </p>
-                                <p
-                                    class="text-sm font-medium text-gray-900 truncate"
-                                    role="none">
+                                <p class="text-sm font-medium text-gray-900 truncate" role="none">
                                     neil.sims@flowbite.com
                                 </p>
                             </div>
@@ -89,8 +87,7 @@
         id="default-sidebar"
         class="fixed justify-items-center align-items-center top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-blue-500 border-r border-gray-400 sm:translate-x-0"
         aria-label="Sidebar">
-        <div
-            class="h-full px-3 pb-4 overflow-y-auto">
+        <div class="h-full px-3 pb-4 overflow-y-auto">
             <ul class="space-y-2 font-medium">
                 <li>
                     <a

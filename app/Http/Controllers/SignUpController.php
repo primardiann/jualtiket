@@ -23,7 +23,7 @@ class SignUpController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'phone_number' => 'required|numeric|digits_between:10,15|unique:users',
             'birthdate' => 'required|date',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
         // Simpan pengguna baru ke database
@@ -41,6 +41,6 @@ class SignUpController extends Controller
         Auth::login($user);
 
         // Redirect ke halaman detail_pembayaran
-        return redirect()->route('login.show');
+        return redirect()->route('login');
     }
 }

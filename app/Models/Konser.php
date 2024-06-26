@@ -25,9 +25,6 @@ class Konser extends Model
         'foto_konser',
         'tanggal_awal',
         'tanggal_akhir',
-        'category',
-        'stock',
-        'price,'
         
 
         // Tambahkan field lain yang ingin Anda mass assignable di sini
