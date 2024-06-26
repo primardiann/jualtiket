@@ -39,8 +39,11 @@ Route::post('/sign_up', [SignUpController::class, 'register'])->name('sign_up.po
 Route::get('deskripsi', [DeskripsiController::class, 'show'])->name('deskripsi');
 
 // Route untuk halaman kategori tiket
-Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori_tiket');
+// Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori_tiket');
 Route::post('/beli-tiket', [KategoriTiketController::class, 'beliTiket'])->name('beli_tiket');
+Route::get('/kategori_tiket', [KategoriTiketController::class, 'show'])->name('kategori.show');
+Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori.index');
+
 
 //Admin
 // routes/web.php

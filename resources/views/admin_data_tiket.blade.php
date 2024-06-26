@@ -178,10 +178,12 @@
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
                         edit
                     </a>
-                    <form action="{{ route('tikets.destroy', $data->id) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                    <form action="{{ route('tikets.destroy', $data->id) }}" onsubmit="return confirm('Are you sure?')"
+                        method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="px-5 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
+                        <button type="submit"
+                            class="px-5 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
                     </form>
                 </div>
             </div>
