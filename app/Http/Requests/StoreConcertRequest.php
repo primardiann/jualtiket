@@ -11,7 +11,7 @@ class StoreConcertRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class StoreConcertRequest extends FormRequest
         return [
             'nama_konser' => 'required|string|max:255',
             'tanggal' => 'required|date',
-            'harga' => 'required|numeric',
+            'harga' => 'required|numeric|min:0',
             'waktu' => 'required|string|max:255',
             'lokasi' => 'required|string|max:255',
             'nama_artis' => 'required|string|max:255',

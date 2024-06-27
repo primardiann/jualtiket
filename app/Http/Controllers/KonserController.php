@@ -30,25 +30,45 @@ class KonserController extends Controller
      */
     public function store(StoreConcertRequest $request)
     {
-        // Validasi request
-        $request->validate([
-            'nama_konser' => 'required|string|max:255',
-            'tanggal' => 'required|date',
-            'harga' => 'required|numeric',
-            'waktu' => 'required|string|max:255',
-            'lokasi' => 'required|string|max:255',
-            'nama_artis' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
-            'foto_konser' => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'tanggal_awal' => 'required|date',
-            'tanggal_akhir' => 'required|date|after_or_equal:tanggal_awal',
-        ]);
+        // // Validasi request
+        // $request->validate([
+        //     'nama_konser' => 'required|string|max:255',
+        //     'tanggal' => 'required|date',
+        //     'harga' => 'required|numeric',
+        //     'waktu' => 'required|string|max:255',
+        //     'lokasi' => 'required|string|max:255',
+        //     'nama_artis' => 'required|string|max:255',
+        //     'deskripsi' => 'required|string',
+        //     'foto_konser' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+        //     'tanggal_awal' => 'required|date',
+        //     'tanggal_akhir' => 'required|date|after_or_equal:tanggal_awal',
+        // ]);
 
-        //upload image
-        $image = $request->file('foto_konser');
-        $image->storeAs('public/assets/images/konser', $image->hashName());
+        // //upload image
+        // $image = $request->file('foto_konser');
+        // $image->storeAs('public/assets/images/konser', $image->hashName());
 
-        Konser::create($request->all());
+        // Konser::create($request->all());
+        // return redirect()->route('konser.index');
+
+        // Validate request and upload image
+        $validatedData = $request->validated();
+        $imagePath = $request->file('foto_konser')->storeAs('public/assets/images/konser', $request->file('foto_konser')->hashName());
+
+        // Create Concert instance and save to database
+        $konser = new Konser();
+        $konser->nama_konser = $validatedData['nama_konser'];
+        $konser->tanggal = $validatedData['tanggal'];
+        $konser->harga = $validatedData['harga'];
+        $konser->waktu = $validatedData['waktu'];
+        $konser->lokasi = $validatedData['lokasi'];
+        $konser->nama_artis = $validatedData['nama_artis'];
+        $konser->deskripsi = $validatedData['deskripsi'];
+        $konser->foto_konser = $imagePath; // Save image path
+        $konser->tanggal_awal = $validatedData['tanggal_awal'];
+        $konser->tanggal_akhir = $validatedData['tanggal_akhir'];
+        $konser->save();
+
         return redirect()->route('konser.index')->with('success', 'Konser dan kategori tiket berhasil disimpan.');
     }
 
