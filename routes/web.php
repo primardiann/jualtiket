@@ -43,10 +43,6 @@ Route::post('/beli-tiket', [KategoriTiketController::class, 'beliTiket'])->name(
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'show'])->name('kategori.show');
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori.index');
 
-//Admin
-// routes/web.php
-Route::get('/admin_home', [KonserController::class, 'index'])->name('index');
-
 //CRUD
 Route::get('/konsers/create', [KonserController::class, 'create'])->name('konser.create');
 Route::post('/konsers', [KonserController::class, 'store'])->name('konser.store');

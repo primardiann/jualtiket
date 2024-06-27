@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreKonserRequest;
 use App\Models\Konser;
+use App\Models\Tiket;
 use Illuminate\Http\Request;
 
 class KonserController extends Controller
@@ -13,9 +14,10 @@ class KonserController extends Controller
      */
     public function index()
     {
-        $konsers = Konser::all(); // Changed $konser to $konsers
+        $konsers = Konser::all();
+        $tikets = Tiket::all(); // retrieve tikets data here as well
 
-        return view('admin_data_tiket', compact('konsers'));
+        return view('admin_data_tiket', compact('konsers', 'tikets'));
     }
 
     /**

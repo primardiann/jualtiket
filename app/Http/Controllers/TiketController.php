@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tiket;
+use App\Models\Konser;
 use App\Http\Requests\StoreTiketRequest;
 use App\Http\Requests\UpdateTiketRequest;
 use Illuminate\Http\Request;
@@ -14,8 +15,10 @@ class TiketController extends Controller
      */
     public function index()
     {
-        $tikets = Tiket::all(); // Mengambil semua data tikets dari database
-        return view('admin_data_tiket', compact('tikets')); // Mengirim data ke view
+        $tikets = Tiket::all();
+        $konsers = Konser::all(); // retrieve konsers data here as well
+
+        return view('admin_data_tiket', compact('konsers', 'tikets'));
     }
 
     /**
