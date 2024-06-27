@@ -107,11 +107,13 @@
             @forelse ($konsers as $index => $konser)
                 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                     <a href="#">
-                        <img class="rounded-t-lg" src="{{ asset('storage/concerts/' . $konser->foto_konser) }}" alt="{{ $konser->nama_konser }}" />
+                        <img class="rounded-t-lg" src="{{ asset('storage/concerts/' . $konser->foto_konser) }}"
+                            alt="{{ $konser->nama_konser }}" />
                     </a>
                     <div class="p-5">
                         <a href="#">
-                            <h3 class="mb-2 font-bold tracking-tight text-gray-900">Nama Konser : {{ $konser->nama_konser }}</h3>
+                            <h3 class="mb-2 font-bold tracking-tight text-gray-900">Nama Konser :
+                                {{ $konser->nama_konser }}</h3>
                         </a>
                         <p class="font-normal"> Tanggal Konser : {{ $konser->tanggal }}</p>
                         <p class="font-normal">Waktu Konser : {{ $konser->waktu }}</p>
@@ -130,10 +132,16 @@
                             edit
                         </a>
 
-                        <a href="#"
-                            class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-200">
-                            batalkan
-                        </a>
+                        <form action="{{ route('konser.destroy', $konser->id) }}"
+                            onsubmit="return confirm('Are you sure?')" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button
+                                class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-200"
+                                type="submit">
+                                batalkan</button>
+                        </form>
+
                     </div>
                 </div>
                 </br>

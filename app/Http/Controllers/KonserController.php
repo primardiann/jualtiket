@@ -98,7 +98,7 @@ class KonserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Konser $konser,)
+    public function update(Request $request, Konser $konser)
     {
         // Validasi request
         $request->validate([
@@ -148,6 +148,7 @@ class KonserController extends Controller
      */
     public function destroy(Konser $konser)
     {
+        $konser = Konser::findOrFail($konser->id);
         $konser->delete();
         return redirect()->route('konser.index')->with('success', 'Konser berhasil dihapus.');
     }
