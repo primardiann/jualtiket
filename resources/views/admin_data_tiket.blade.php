@@ -107,24 +107,29 @@
             @forelse ($konsers as $index => $konser)
                 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                     <a href="#">
-                        <img class="rounded-t-lg" src="images/taylor.jpg" alt="" />
+                        <img class="rounded-t-lg" src="{{ asset('storage/concerts/' . $konser->foto_konser) }}" alt="{{ $konser->nama_konser }}" />
                     </a>
                     <div class="p-5">
                         <a href="#">
-                            <h3 class="mb-2 font-bold tracking-tight text-gray-900">{{ $konser->nama_konser }}</h3>
+                            <h3 class="mb-2 font-bold tracking-tight text-gray-900">Nama Konser : {{ $konser->nama_konser }}</h3>
                         </a>
-                        <a href="#">
-                            <h3 class="mb-2 font-normal tracking-tight text-gray-600">{{ $konser->tanggal }}
-                            </h3>
-                        </a>
+                        <p class="font-normal"> Tanggal Konser : {{ $konser->tanggal }}</p>
+                        <p class="font-normal">Waktu Konser : {{ $konser->waktu }}</p>
+                        <p class="font-normal">Lokasi Konser : {{ $konser->lokasi }}</p>
+                        <p class="font-normal">Nama Artis : {{ $konser->nama_artis }}</p>
+                        <p class="font-normal">Deskripsi : {{ $konser->deskripsi }}</p>
+                        <p class="font-normal">Tanggal Peluncuran : {{ $konser->tanggal_awal }}</p>
+                        <p class="font-normal">Tanggal Tutup Penjualan Tiket: {{ $konser->tanggal_akhir }}</p>
+
                         {{-- <a href="#">
                         <h3 class="mb-3 font-bold tracking-tight text-gray-900">Harga Tiket</h3>
                     </a> --}}
                         <!-- <h3 class="mb-3 font-normal text-gray-700">19 Februari 2024</h3> -->
-                        <form href="#"
+                        <a href="{{ route('konser.edit', $konser->id) }}"
                             class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-200">
                             edit
-                        </form>
+                        </a>
+
                         <a href="#"
                             class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-200">
                             batalkan
@@ -185,8 +190,9 @@
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
                         edit
                     </a>
-                    <form action="{{ route('tikets.destroy', $data->id) }}" onsubmit="return confirm('Are you sure?')"
-                        method="POST">
+                    <br>
+                    <form action="{{ route('tikets.destroy', $data->id) }}"
+                        onsubmit="return confirm('Are you sure?')" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit"

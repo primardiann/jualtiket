@@ -52,7 +52,7 @@ class KonserController extends Controller
         // Upload image
         // Mengambil file dari request dan menyimpannya ke direktori 'public/products' dengan nama yang di-hash
         $image = $request->file('foto_konser');
-        $image->storeAs('public/products', $image->hashName());
+        $image->storeAs('public/concerts', $image->hashName());
 
         // Create Konser
         // Membuat entitas Konser baru dan menyimpan data yang divalidasi ke database
@@ -85,9 +85,12 @@ class KonserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Konser $konser)
+    public function edit($id)
     {
-        return view('admin_edit_tiket', compact('konser'));
+        $konser = Konser::with('detail')->find($id);
+        $tiket = Tiket::findorfail($id);
+
+        return view('admin_edit_tiket', compact('konser', 'tiket'));
     }
 
     /**

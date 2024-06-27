@@ -57,10 +57,12 @@ class TiketController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tiket $tiket)
+    public function edit($id)
     {
-        $tiket = Tiket::findOrFail($tiket->id);
-        return view('admin_edit_tiket', compact('tiket'));
+        $tiket = Tiket::findorfail($id);
+        $konser = Konser::with('detail')->find($id);
+        
+        return view('admin_edit_tiket', compact('tiket', 'konser'));
     }
 
     /**

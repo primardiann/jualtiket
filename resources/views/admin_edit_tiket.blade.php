@@ -31,7 +31,7 @@
                         </svg>
                     </button>
                     <a href="https://flowbite.com" class="flex ms-2 md:me-24">
-                        <img class="w-12 h-12 rounded-full" src="images/Logo.jpg" alt="Rounded avatar">
+                        <img class="w-12 h-12 rounded-full" src="/images/Logo.jpg" alt="Rounded avatar">
                         <span class=" text-4xl font-semibold whitespace-nowrap">Concert.tix</span>
                     </a>
                 </div>

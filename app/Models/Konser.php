@@ -15,4 +15,5 @@ class Konser extends Model
      * @var array
      */
     protected $fillable = ['nama_konser', 'tanggal', 'waktu', 'lokasi', 'nama_artis', 'deskripsi', 'foto_konser', 'tanggal_awal', 'tanggal_akhir'];
+    
 }
