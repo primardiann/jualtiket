@@ -110,7 +110,7 @@
                 @csrf
                 <div class="mb-4">
                     <label for="namaKonser" class="block text-gray-700 text-sm font-medium mb-2">Nama Konser</label>
-                    <input type="text" id="namaKonser" name="nama_konser"
+                    <input type="text" id="namaKonser" name="nama_konser" value="{{ old('nama_konser') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         placeholder="Masukkan nama konser">
                 </div>
@@ -118,19 +118,19 @@
                 <div class="mb-4">
                     <label for="tanggalKonser" class="block text-gray-700 text-sm font-medium mb-2">Tanggal
                         Konser</label>
-                    <input type="date" name="tanggal" id="tanggalKonser"
+                    <input type="date" name="tanggal" id="tanggalKonser" value="{{ old('tanggal') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
                 </div>
                 <div class="mb-4">
                     <label for="waktuKonser" class="block text-gray-700 text-sm font-medium mb-2">Waktu Konser</label>
-                    <input type="time" name="waktu" id="waktuKonser"
+                    <input type="time" name="waktu" id="waktuKonser" value="{{ old('waktu') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
                 </div>
 
                 <div class="mb-4">
                     <label for="lokasiKonser" class="block text-gray-700 text-sm font-medium mb-2">Lokasi
                         Konser</label>
-                    <input type="text" name="lokasi" id="lokasiKonser"
+                    <input type="text" name="lokasi" id="lokasiKonser" value="{{ old('lokasi') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         placeholder="Masukkan lokasi konser">
                 </div>
@@ -138,7 +138,7 @@
                 <div class="mb-4">
                     <label for="namaArtis" class="block text-gray-700 text-sm font-medium mb-2">Nama Panggung
                         Artis</label>
-                    <input type="text" name="nama_artis" id="namaArtis"
+                    <input type="text" name="nama_artis" id="namaArtis" value="{{ old('nama_artis') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         placeholder="Masukkan nama panggung artis">
                 </div>
@@ -146,7 +146,7 @@
                 <div class="mb-4">
                     <label for="deskripsiKonser" class="block text-gray-700 text-sm font-medium mb-2">Deskripsi
                         Konser</label>
-                    <textarea id="deskripsiKonser" name="deskripsi"
+                    <textarea id="deskripsiKonser" name="deskripsi" 
                         class="form-textarea w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         rows="5" placeholder="Masukkan deskripsi konser"></textarea>
                 </div>
@@ -169,10 +169,9 @@
                 </div>
 
                 <center>
-                    <div class="container flex justify-content: flex-end">
-                        <button type="submit"
-                            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Unggah</button>
-                    </div>
+                    <button type="submit"
+                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">Unggah</button>
+
                 </center>
             </form>
 
@@ -194,7 +193,7 @@
                     <div class="mb-4 mt-4 ml-3 mr-3">
                         <label for="kateogri1" class="block text-gray-700 text-sm font-medium mb-2">Nama Jenis
                             Kategori</label>
-                        <input type="text" id="kateogri1" name="category"
+                        <input type="text" id="kateogri1" name="category" value="{{ old('category') }}"
                             class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                             placeholder="Masukkan Jenis Kategori">
                     </div>
@@ -203,7 +202,7 @@
                             tiket</label>
                         <div class="input-group">
                             <span class="input-group-text">Rp</span>
-                            <input type="number" name="price" id="hargaDasar"
+                            <input type="number" name="price" id="hargaDasar" value="{{ old('price') }}"
                                 class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 ml-1 mr-1">
                         </div>
                         <div class="mb-4 mt-4 ">

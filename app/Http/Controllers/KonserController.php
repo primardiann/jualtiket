@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreConcertRequest;
 use App\Models\Konser;
 use Illuminate\Http\Request;
 
@@ -12,12 +13,9 @@ class KonserController extends Controller
      */
     public function index()
     {
-        // Fetch all concerts and return the view with the data
-        $konsers = Konser::all();
-        return view('admin_tampilan_awal', compact('konsers'));
+        $konser = Konser::all();
+        return view('admin_data_tiket', compact('konsers'));
     }
-    
-    
 
     /**
      * Show the form for creating a new resource.
@@ -30,7 +28,7 @@ class KonserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreConcertRequest $request)
     {
         // Validasi request
         $request->validate([
@@ -41,35 +39,16 @@ class KonserController extends Controller
             'lokasi' => 'required|string|max:255',
             'nama_artis' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'foto_konser' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'foto_konser' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'tanggal_awal' => 'required|date',
             'tanggal_akhir' => 'required|date|after_or_equal:tanggal_awal',
-            
         ]);
 
-        // Simpan data konser ke dalam database
-        $konser = new Konser();
-        $konser->nama_konser = $request->nama_konser;
-        $konser->tanggal = $request->tanggal;
-        $konser->harga = $request->harga;
-        $konser->waktu = $request->waktu;
-        $konser->lokasi = $request->lokasi;
-        $konser->nama_artis = $request->nama_artis;
-        $konser->deskripsi = $request->deskripsi;
-        $konser->tanggal_awal = $request->tanggal_awal;
-        $konser->tanggal_akhir = $request->tanggal_akhir;
+        //upload image
+        $image = $request->file('foto_konser');
+        $image->storeAs('public/assets/images/konser', $image->hashName());
 
-
-
-
-        if ($request->hasFile('foto_konser')) {
-            $path = $request->file('foto_konser')->store('public/foto_konser');
-            $konser->foto_konser = $path;
-        }
-
-        $konser->save();
-
-        // Redirect atau response setelah penyimpanan berhasil
+        Konser::create($request->all());
         return redirect()->route('konser.index')->with('success', 'Konser dan kategori tiket berhasil disimpan.');
     }
 
@@ -77,10 +56,10 @@ class KonserController extends Controller
      * Display the specified resource.
      */
     public function show($id)
-{
-    $konser = Konser::findOrFail($id); // Mengambil data konser berdasarkan ID
-    return view('data_pembeli', compact('konser'));
-}
+    {
+        $konser = Konser::findOrFail($id); // Mengambil data konser berdasarkan ID
+        return view('data_pembeli', compact('konser'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -107,7 +86,6 @@ class KonserController extends Controller
             'foto_konser' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'tanggal_awal' => 'required|date',
             'tanggal_akhir' => 'required|date|after_or_equal:tanggal_awal',
-            
         ]);
 
         // Update data konser
@@ -120,9 +98,6 @@ class KonserController extends Controller
         $konser->deskripsi = $request->deskripsi;
         $konser->tanggal_awal = $request->tanggal_awal;
         $konser->tanggal_akhir = $request->tanggal_akhir;
-
-
-
 
         if ($request->hasFile('foto_konser')) {
             $path = $request->file('foto_konser')->store('public/foto_konser');
@@ -144,4 +119,3 @@ class KonserController extends Controller
         return redirect()->route('konser.index')->with('success', 'Konser berhasil dihapus.');
     }
 }
-

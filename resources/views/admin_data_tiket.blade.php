@@ -101,6 +101,7 @@
             <b>Data Tiket</b>
         </h3>
         <div class="pt-3 grid grid-cols-2 gap-4 mb-4">
+
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                 <a href="#">
                     <img class="rounded-t-lg" src="images/taylor.jpg" alt="" />

@@ -15,15 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('nama_konser');
             $table->date('tanggal');
-            $table->decimal('harga', 10, 2);
-            $table->string('waktu')->nullable();
-            $table->string('lokasi')->nullable();
-            $table->string('nama_artis')->nullable();
-            $table->text('deskripsi')->nullable();
+            $table->decimal('harga', 8, 2);
+            $table->string('waktu');
+            $table->string('lokasi');
+            $table->string('nama_artis');
+            $table->text('deskripsi');
             $table->string('foto_konser')->nullable();
             $table->date('tanggal_awal');
             $table->date('tanggal_akhir');
-        
             $table->timestamps();
         });
     }
