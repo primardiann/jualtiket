@@ -24,7 +24,6 @@ Route::get('/', function () {
     return view('tampilan_awal');
 });
 
-    
 // Route for AdminController
 Route::get('/admin/tampilan-awal', [ControllersAdminController::class, 'index'])->name('admin_tampilan_awal');
 
@@ -44,19 +43,18 @@ Route::post('/beli-tiket', [KategoriTiketController::class, 'beliTiket'])->name(
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'show'])->name('kategori.show');
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori.index');
 
-
 //Admin
 // routes/web.php
 Route::get('/admin_home', [KonserController::class, 'index'])->name('index');
 
 //CRUD
-Route::get('/konser/create', [KonserController::class, 'create'])->name('konser.create');
-Route::post('/konser-store', [KonserController::class, 'store'])->name('konser.store');
-Route::get('/konser', [KonserController::class, 'index'])->name('konser.index');
+Route::get('/konsers/create', [KonserController::class, 'create'])->name('konser.create');
+Route::post('/konsers', [KonserController::class, 'store'])->name('konser.store');
+Route::get('/konsers', [KonserController::class, 'index'])->name('konser.index');
 // Route::get('/admin/{konser}', [KonserController::class, 'show'])->name('konser.show');
-Route::get('/konser/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
-Route::put('/konser/{konser}', [KonserController::class, 'update'])->name('konser.update');
-Route::delete('/konser{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
+Route::get('/konsers/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
+Route::put('/konsers/{konser}', [KonserController::class, 'update'])->name('konser.update');
+Route::delete('/konsers/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
 
 Route::get('/tikets', [TiketController::class, 'index'])->name('tikets.index');
 Route::get('/tikets/create', [TiketController::class, 'create'])->name('tikets.create');
@@ -73,7 +71,6 @@ Route::post('/calculate', [TiketController::class, 'calculate'])->name('tickets.
 //     })->name('dashboard');
 // });
 
-
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -84,4 +81,4 @@ Route::post('/calculate', [TiketController::class, 'calculate'])->name('tickets.
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

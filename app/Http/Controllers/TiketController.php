@@ -13,19 +13,16 @@ class TiketController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    
-        {
-            $tikets = Tiket::all();
-            return view('admin_data_tiket', compact('tikets'));
-        }
-    
+    {
+        $tikets = Tiket::all(); // Mengambil semua data tikets dari database
+        return view('admin_data_tiket', compact('tikets')); // Mengirim data ke view
+    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-    
         return view('admin_tambah_konser');
     }
 
@@ -41,14 +38,10 @@ class TiketController extends Controller
             'stock' => 'required|integer|min:0',
         ]);
 
-           // Simpan tiket baru ke dalam database
+        // Simpan tiket baru ke dalam database
         Tiket::create($request->all());
         return redirect()->route('tikets.index');
-        
     }
-
-    
-    
 
     /**
      * Display the specified resource.
@@ -62,10 +55,10 @@ class TiketController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Tiket $tiket)
-{
-    $tiket = Tiket::findOrFail($tiket->id);
-    return view('admin_edit_tiket', compact('tiket'));
-}
+    {
+        $tiket = Tiket::findOrFail($tiket->id);
+        return view('admin_edit_tiket', compact('tiket'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -87,7 +80,7 @@ class TiketController extends Controller
         $tiket->update([
             'category' => $request->category,
             'price' => $request->price,
-            'stock' => $request->stock
+            'stock' => $request->stock,
         ]);
 
         return redirect()->route('tikets.index');
@@ -104,7 +97,6 @@ class TiketController extends Controller
         $tiket->delete();
         return redirect()->route('tikets.index');
     }
-
 
     public function calculate(Request $request)
     {
@@ -125,8 +117,4 @@ class TiketController extends Controller
         // Kembalikan hasil ke view
         return view('kategori_tiket', compact('regularQuantity', 'vipQuantity', 'totalPrice', 'totalQuantity', 'regularTotal', 'vipTotal'));
     }
-
-
-    
 }
-

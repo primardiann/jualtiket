@@ -113,6 +113,9 @@
                     <input type="text" id="namaKonser" name="nama_konser" value="{{ old('nama_konser') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         placeholder="Masukkan nama konser">
+                    @error('nama_konser')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -120,11 +123,18 @@
                         Konser</label>
                     <input type="date" name="tanggal" id="tanggalKonser" value="{{ old('tanggal') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+                    @error('tanggal')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
+
                 <div class="mb-4">
                     <label for="waktuKonser" class="block text-gray-700 text-sm font-medium mb-2">Waktu Konser</label>
                     <input type="time" name="waktu" id="waktuKonser" value="{{ old('waktu') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+                    @error('waktu')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -133,6 +143,9 @@
                     <input type="text" name="lokasi" id="lokasiKonser" value="{{ old('lokasi') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         placeholder="Masukkan lokasi konser">
+                    @error('lokasi')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -141,37 +154,56 @@
                     <input type="text" name="nama_artis" id="namaArtis" value="{{ old('nama_artis') }}"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         placeholder="Masukkan nama panggung artis">
+                    @error('nama_artis')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
                     <label for="deskripsiKonser" class="block text-gray-700 text-sm font-medium mb-2">Deskripsi
                         Konser</label>
-                    <textarea id="deskripsiKonser" name="deskripsi" 
+                    <textarea id="deskripsiKonser" name="deskripsi"
                         class="form-textarea w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-                        rows="5" placeholder="Masukkan deskripsi konser"></textarea>
+                        rows="5" placeholder="Masukkan deskripsi konser">{{ old('deskripsi') }}</textarea>
+                    @error('deskripsi')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
                     <label for="fotoKonser" class="block text-gray-700 text-sm font-medium mb-2">Foto Konser</label>
                     <input type="file" name="foto_konser" id="fotoKonser"
                         class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+                    @error('foto_konser')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="mb-3 mt-4">
                     <label for="tanggalPeluncuran" class="block text-gray-700 text-sm font-medium mb-2">Tanggal
                         Peluncuran Tiket</label>
-                    <input type="date" class="form-control" id="tanggalPeluncuran" name="tanggal_awal">
+                    <input type="date" class="form-control" id="tanggalPeluncuran" name="tanggal_awal"
+                        value="{{ old('tanggal_awal') }}">
+                    @error('tanggal_awal')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
+
                 <div class="mb-3">
                     <label for="tanggalTutup" class="block text-gray-700 text-sm font-medium mb-2">Tanggal Tutup
                         Penjualan Tiket</label>
-                    <input type="date" class="form-control" id="tanggalTutup" name="tanggal_akhir">
+                    <input type="date" class="form-control" id="tanggalTutup" name="tanggal_akhir"
+                        value="{{ old('tanggal_akhir') }}">
+                    @error('tanggal_akhir')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <center>
                     <button type="submit"
-                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">Unggah</button>
-
+                        class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">
+                        Unggah
+                    </button>
                 </center>
             </form>
 
@@ -187,7 +219,7 @@
             </div>
             <form class="mt-8" action="{{ route('tikets.store') }}" method="POST">
                 @csrf
-                
+
                 <div
                     class="form-input w-full rounded-md border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
                     <div class="mb-4 mt-4 ml-3 mr-3">

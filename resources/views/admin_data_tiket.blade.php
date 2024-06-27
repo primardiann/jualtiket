@@ -96,28 +96,32 @@
             </ul>
         </div>
     </aside>
-    <div class="p-8 pt-20 sm:ml-64 fixed-top"><br>
-        <h3>
-            <b>Data Tiket</b>
-        </h3>
-        <div class="pt-3 grid grid-cols-2 gap-4 mb-4">
 
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+
+    <a href="{{ route('konser.create') }}"
+        class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200">Tambah
+        Tiket</a>
+    @forelse ($konsers as $index => $data)
+        <div class="p-8 pt-20 sm:ml-64 fixed-top"><br>
+            <h3>
+                <b>Data Tiket</b>
+            </h3>
+
+            <div class="pt-3 grid grid-cols-2 gap-4 mb-4">
+
+                <class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                 <a href="#">
                     <img class="rounded-t-lg" src="images/taylor.jpg" alt="" />
                 </a>
                 <div class="p-5">
                     <a href="#">
-                        <h3 class="mb-2 font-bold tracking-tight text-gray-900">The Eras Tour</h3>
+                        <h3 class="mb-2 font-bold tracking-tight text-gray-900">{{ $data->nama_konser }}</h3>
                     </a>
                     <a href="#">
-                        <h3 class="mb-2 font-normal tracking-tight text-gray-600">19 Februari 2024
+                        <h3 class="mb-2 font-normal tracking-tight text-gray-600">{{ $data->tanggal }}
                         </h3>
                     </a>
-                    <a href="#">
-                        <h3 class="mb-3 font-bold tracking-tight text-gray-900">Harga Tiket</h3>
-                    </a>
-                    <!-- <h3 class="mb-3 font-normal text-gray-700">19 Februari 2024</h3> -->
+
                     <form href="#"
                         class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-200">
                         edit
@@ -127,11 +131,13 @@
                         batalkan
                     </a>
                 </div>
-            </div>
-            </br>
-        </div>
 
-        {{-- <div class="grid grid-cols-3 gap-4 mb-4">
+                </br>
+            </div>
+        @empty
+    @endforelse
+
+    {{-- <div class="grid grid-cols-3 gap-4 mb-4">
         <div class="max-w-xs p-4 pt-2 bg-white border-2 border-black-200 rounded-lg">
             <a href="#">
                 <h3 class="font-bold tracking-tight text-gray-900">VIP</h3>
@@ -162,34 +168,34 @@
         </div>
     </div> --}}
 
-        <a href="{{ route('tikets.create') }}"
-            class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200">Tambah
-            Tiket</a>
-        @forelse ($tikets as $index => $data)
-            <div class="grid grid-cols-3 gap-4 mb-4">
-                <div class="max-w-xs p-4 pt-2 bg-white border-2 border-black-200 rounded-lg">
-                    <a href="#">
-                        <h3 class="font-bold tracking-tight text-gray-900">{{ $data->category }}</h3>
-                    </a>
-                    <p class="font-normal">total stok {{ $data->stock }}</p>
-                    <p class="font-normal">stok awal 100</p>
-                    <p class="font-normal">tiket terjual 30</p>
-                    <p class="mb-2 font-normal">sisa stok 70</p>
-                    <a href="{{ route('tikets.edit', $data->id) }}"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                        edit
-                    </a>
-                    <form action="{{ route('tikets.destroy', $data->id) }}" onsubmit="return confirm('Are you sure?')"
-                        method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit"
-                            class="px-5 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
-                    </form>
-                </div>
+    <a href="{{ route('tikets.create') }}"
+        class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200">Tambah
+        Tiket</a>
+    @forelse ($tikets as $index => $data)
+        <div class="grid grid-cols-3 gap-4 mb-4">
+            <div class="max-w-xs p-4 pt-2 bg-white border-2 border-black-200 rounded-lg">
+                <a href="#">
+                    <h3 class="font-bold tracking-tight text-gray-900">{{ $data->category }}</h3>
+                </a>
+                <p class="font-normal">total stok {{ $data->stock }}</p>
+                <p class="font-normal">stok awal 100</p>
+                <p class="font-normal">tiket terjual 30</p>
+                <p class="mb-2 font-normal">sisa stok 70</p>
+                <a href="{{ route('tikets.edit', $data->id) }}"
+                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                    edit
+                </a>
+                <form action="{{ route('tikets.destroy', $data->id) }}" onsubmit="return confirm('Are you sure?')"
+                    method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"
+                        class="px-5 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
+                </form>
             </div>
-        @empty
-        @endforelse
+        </div>
+    @empty
+    @endforelse
 </body>
 
 </html>

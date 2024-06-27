@@ -11,7 +11,7 @@ class StoreKonserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class StoreKonserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nama_konser' => 'required|string|max:255',
+            'tanggal' => 'required|date',
+            'harga' => 'required|numeric',
+            'lokasi' => 'required|string|max:255',
+            'nama_artis' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'foto_konser' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'tanggal_awal' => 'required|date',
+            'tanggal_akhir' => 'required|date|after_or_equal:tanggal_awal',
         ];
     }
 }
