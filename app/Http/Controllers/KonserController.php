@@ -6,6 +6,8 @@ use App\Http\Requests\StoreKonserRequest;
 use App\Models\Konser;
 use App\Models\Tiket;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateKonserRequest;
+use Illuminate\Support\Facades\Storage;
 
 class KonserController extends Controller
 {
@@ -87,8 +89,8 @@ class KonserController extends Controller
      */
     public function edit($id)
     {
-        $konser = Konser::with('detail')->find($id);
-        $tiket = Tiket::findorfail($id);
+        $konser = Konser::findorfail($id); // Ensure you retrieve a single Konser instance
+        $tiket = Tiket::where('id', $id)->first(); // Ensure you retrieve a single Tiket instance related to the Konser
 
         return view('admin_edit_tiket', compact('konser', 'tiket'));
     }
@@ -96,42 +98,49 @@ class KonserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Konser $konser)
+    public function update(Request $request, Konser $konser,)
     {
         // Validasi request
         $request->validate([
             'nama_konser' => 'required|string|max:255',
             'tanggal' => 'required|date',
-            'harga' => 'required|numeric',
-            'waktu' => 'required|string|max:255',
             'lokasi' => 'required|string|max:255',
             'nama_artis' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'foto_konser' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'foto_konser' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
             'tanggal_awal' => 'required|date',
             'tanggal_akhir' => 'required|date|after_or_equal:tanggal_awal',
         ]);
 
-        // Update data konser
-        $konser->nama_konser = $request->nama_konser;
-        $konser->tanggal = $request->tanggal;
-        $konser->harga = $request->harga;
-        $konser->waktu = $request->waktu;
-        $konser->lokasi = $request->lokasi;
-        $konser->nama_artis = $request->nama_artis;
-        $konser->deskripsi = $request->deskripsi;
-        $konser->tanggal_awal = $request->tanggal_awal;
-        $konser->tanggal_akhir = $request->tanggal_akhir;
-
+        // Check if image is uploaded
         if ($request->hasFile('foto_konser')) {
-            $path = $request->file('foto_konser')->store('public/foto_konser');
-            $konser->foto_konser = $path;
+            // Upload new image
+            $image = $request->file('foto_konser');
+            $image->storeAs('public/concerts', $image->hashName());
+
+            // Delete old image
+            if ($konser->foto_konser) {
+                Storage::delete('public/concerts/' . $konser->foto_konser);
+            }
+
+            // Update Konser with new image
+            $konser->foto_konser = $image->hashName();
         }
 
-        $konser->save();
+        // Update Konser with other attributes
 
-        // Redirect atau response setelah update berhasil
-        return redirect()->route('konser.index')->with('success', 'Konser berhasil diperbarui.');
+        // $konser->update([
+        //     'nama_konser' => $request->nama_konser,
+        //     'tanggal' => $request->tanggal,
+        //     'lokasi' => $request->lokasi,
+        //     'nama_artis' => $request->nama_artis,
+        //     'deskripsi' => $request->deskripsi,
+        //     'tanggal_awal' => $request->tanggal_awal,
+        //     'tanggal_akhir' => $request->tanggal_akhir,
+        // ]);
+
+        // // Redirect atau response setelah update berhasil
+        // return redirect()->route('konser.index')->with('success', 'Konser berhasil diperbarui.');
     }
 
     /**

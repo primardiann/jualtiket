@@ -80,41 +80,40 @@
             </ul>
         </div>
     </aside>
-    <div class="p-8 pt-20 sm:ml-64 fixed-top">
-        <div class="pt-3 grid grid-cols-2 gap-4 mb-4">
-            <div class="max-w-sm items-center justify-center border border-gray-500">
-                <a href="#">
-                    <p class="p-1 mb-4 text-center text-gray-500 bg-gray-200 shadow">Tambahkan foto</p>
-                    <img class="h-300 w-500" src="images/taylor.jpg" alt="" />
-                </a>
-                <div class="p-2 mt-4 bg-gray-200">
-                    <a href="#">
+
+
+    <form class="mt-8" action="{{ route('konser.update', $konser->id) }}" method="POST"
+        enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+
+
+        <div class="p-8 pt-20 sm:ml-64 fixed-top">
+            <div class="pt-3 grid grid-cols-2 gap-4 mb-4">
+                <div class="max-w-sm items-center justify-center border border-gray-500">
+                    <div>
+                        <p class="p-1 mb-4 text-center text-gray-500 bg-gray-200 shadow">Foto</p>
+                        <img class="h-300 w-500" src="{{ asset('storage/concerts/' . $konser->foto_konser) }}"
+                            alt="Foto Konser">
+                    </div>
+                    <div class="p-2 mt-4 bg-gray-200">
                         <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>
                         <input
                             class="block w-full text-sm mb-2 text-gray-500 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
-                            id="file_input" type="file">
-                    </a>
-                    <button disabled="disabled" type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center me-2 inline-flex items-center">
-                        <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="none" viewbox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
-                        </svg>
-                        <span>Ganti Foto</span>
-                    </button>
+                            id="file_input" type="file" name="foto_konser">
+                    </div>
                 </div>
-            </div>
 
-            <!-- konten sebelahnya -->
-            <div class="items-center justify-center border border-gray-500 shadow">
-                <a href="#">
+                <!-- Konten sebelahnya -->
+                <div class="items-center justify-center border border-gray-500 shadow">
                     <p class="p-1 mb-4 text-center text-gray-500 bg-gray-200">Kelola Konser</p>
-                </a>
+
                     <div class="mb-4">
+
+
                         <label for="namaKonser" class="block text-gray-500 text-sm font-medium mb-2">Judul
                             Konser</label>
-                        <input type="text" id="namaKonser"
+                        <input type="text" id="namaKonser" name="nama_konser" value="{{ $konser->nama_konser }}"
                             class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                             placeholder="Masukkan nama konser">
                     </div>
@@ -122,14 +121,14 @@
                     <div class="mb-4">
                         <label for="tanggalKonser" class="block text-gray-500 text-sm font-medium mb-2">Tanggal
                             Konser</label>
-                        <input type="date" id="tanggalKonser"
+                        <input type="date" id="tanggalKonser" name="tanggal" value="{{ $konser->tanggal }}"
                             class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500">
                     </div>
 
                     <div class="mb-4">
                         <label for="lokasiKonser" class="block text-gray-500 text-sm font-medium mb-2">Lokasi
                             Konser</label>
-                        <input type="text" id="lokasiKonser"
+                        <input type="text" id="lokasiKonser" name="lokasi" value="{{ $konser->lokasi }}"
                             class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                             placeholder="Masukkan lokasi konser">
                     </div>
@@ -137,14 +136,14 @@
                     <div class="mb-4">
                         <label for="waktuKonser" class="block text-gray-500 text-sm font-medium mb-2">Waktu
                             Konser</label>
-                        <input type="time" id="waktuKonser"
+                        <input type="time" id="waktuKonser" name="waktu" value="{{ $konser->waktu }}"
                             class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500">
                     </div>
 
                     <div class="mb-4">
                         <label for="namaArtis" class="block text-gray-500 text-sm font-medium mb-2">Nama Panggung
                             Artis</label>
-                        <input type="text" id="namaArtis"
+                        <input type="text" id="namaArtis" name="nama_artis" value="{{ $konser->nama_artis }}"
                             class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                             placeholder="Masukkan nama panggung artis">
                     </div>
@@ -152,82 +151,115 @@
                     <div class="mb-4">
                         <label for="deskripsiKonser" class="block text-gray-500 text-sm font-medium mb-2">Deskripsi
                             Konser</label>
-                        <textarea id="deskripsiKonser"
+                        <textarea id="deskripsiKonser" name="deskripsi"
                             class="form-textarea w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
-                            rows="5" placeholder=""></textarea>
+                            rows="5" placeholder="">{{ $konser->deskripsi }}</textarea>
                     </div>
-                    <div class="mb-4">
+                    <div class="">
+
+
+                        <div class="pt-3 grid grid-cols-2 gap-4">
+                            <div class="m-2">
+                                <label for="tanggalPeluncuran"
+                                    class="block text-gray-500 text-sm font-medium mb-2">Tanggal Peluncuran
+                                    Tiket</label>
+                                <input type="date" class="form-control" id="tanggalPeluncuran"
+                                    name="tanggal_awal" value="{{ $konser->tanggal_awal }}">
+                            </div>
+
+                            <div class="m-2">
+                                <label for="tanggalTutup" class="block text-gray-500 text-sm font-medium mb-2">Tanggal
+                                    Tutup Penjualan Tiket</label>
+                                <input type="date" class="form-control" id="tanggalTutup" name="tanggal_akhir"
+                                    value="{{ $konser->tanggal_akhir }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <center>
+
+            <button type="submit"
+                class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">
+                <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewbox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d=" m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0
+                    0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565
+                    6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
+                </svg>
+                <span>Unggah</span>
+            </button>
+        </center>
+        </div>
+    </form>
+    {{-- <div class="mb-4">
                         <label for="deskripsiKonser" class="block text-gray-500 text-sm font-medium mb-2">Syarat dan
                             Ketentuan Konser</label>
                         <textarea id="deskripsiKonser"
                             class="form-textarea w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                             rows="5" placeholder=""></textarea>
-                    </div><br>
+                    </div><br> --}}
 
-                    <div class="mb-2">
-                        <!-- <center> -->
-                        <label for="kategoriTiket" class="block text-gray-900 text-sm font-medium mb-2">Menambahkan
-                            Kategori Tiket</label>
-                        <!-- </center> -->
+    {{-- <div class="mb-2">
+                <!-- <center> -->
+                <label for="kategoriTiket" class="block text-gray-900 text-sm font-medium mb-2">Menambahkan
+                    Kategori Tiket</label>
+                <!-- </center> -->
+            </div> --}}
+
+    {{-- <!-- untuk kategori 1 -->
+                <div class="mb-2">
+                    <label for="kategoriTiket" class="block text-gray-500 text-sm font-medium mb-2">
+                        Kategori 1</label>
+                </div>
+                <div class="form-input w-full border border-gray-500 focus:border-indigo-500 focus:ring-indigo-500">
+                    <div class="mb-4 mt-4 ml-3 mr-3">
+                        <label for="kateogri1" class="block text-gray-500 text-sm font-medium mb-2">Nama Jenis
+                            Kategori</label>
+                        <input type="text" id="kateogri1"
+                            class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
+                            placeholder="Masukkan Jenis Kategori">
                     </div>
-
-                    <!-- untuk kategori 1 -->
-                    <div class="mb-2">
-                        <label for="kategoriTiket" class="block text-gray-500 text-sm font-medium mb-2">
-                            Kategori 1</label>
-                    </div>
-                        <div
-                            class="form-input w-full border border-gray-500 focus:border-indigo-500 focus:ring-indigo-500">
-                            <div class="mb-4 mt-4 ml-3 mr-3">
-                                <label for="kateogri1" class="block text-gray-500 text-sm font-medium mb-2">Nama Jenis
-                                    Kategori</label>
-                                <input type="text" id="kateogri1"
-                                    class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
-                                    placeholder="Masukkan Jenis Kategori">
-                            </div>
-                            <div class="mb-4 mt-4 ml-3 mr-3">
-                                <label for="hargaTiket1" class="block text-gray-500 text-sm font-medium mb-2">Harga
-                                    tiket</label>
-                                <div class="input-group">
-                                    <input type="number" id="hargaDasar"
-                                        class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500 ml-1 mr-1"
-                                        placeholder="Rp">
-                                </div>
-                                <div class="mb-4 mt-4">
-                                    <label for="stok1"
-                                        class="block text-gray-500 text-sm font-medium mb-2">Stok</label>
-                                </div>
-                                <div class="input-group">
-                                    <input type="number" id="stok1"
-                                        class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500">
-                                </div>
-                            </div>
-                        </div><br>
-
-                        <!-- untuk kategori 2 -->
-                        <div class="mb-2 item-center">
-                            <label for="kategoriTiket" class="block text-gray-500 text-sm font-medium mb-2">
-                                Kategori 2</label>
+                    <div class="mb-4 mt-4 ml-3 mr-3">
+                        <label for="hargaTiket1" class="block text-gray-500 text-sm font-medium mb-2">Harga
+                            tiket</label>
+                        <div class="input-group">
+                            <input type="number" id="hargaDasar"
+                                class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500 ml-1 mr-1"
+                                placeholder="Rp">
                         </div>
-                        <form class="mt-8" action="{{ route('tikets.update', $tiket->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <div
-                                class="form-input w-full border border-gray-500 focus:border-indigo-500 focus:ring-indigo-500">
-                                <div class="mb-4 mt-4 ml-3 mr-3">
-                                    <label for="kateogri1" class="block text-gray-500 text-sm font-medium mb-2">Nama
-                                        Jenis Kategori</label>
-                                    <input type="text" id="kateogri2" name="category"
-                                        value="{{ $tiket->category }}"
-                                        class="
-                                            form-input="form-input"
-                                        w-full="w-full" rounded-md="rounded-md" border="border"
-                                        border-gray-400="border-gray-400"
-                                        focus:border-indigo-500="focus:border-indigo-500" focus:ring-indigo-500"
-                                        placeholder="
-                                            masukkan="Masukkan"
-                                        jenis="Jenis"
-                                        kategori"="Kategori"">
+                        <div class="mb-4 mt-4">
+                            <label for="stok1" class="block text-gray-500 text-sm font-medium mb-2">Stok</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="number" id="stok1"
+                                class="form-input w-full rounded-md border border-gray-400 focus:border-indigo-500 focus:ring-indigo-500">
+                        </div>
+                    </div>
+                </div><br> --}}
+    <div>
+        {{-- <!-- untuk kategori 2 -->
+                <div class="mb-2 item-center">
+                    <label for="kategoriTiket" class="block text-gray-500 text-sm font-medium mb-2">
+                        Kategori </label>
+                </div> --}}
+        <form class="mt-8" action="{{ route('tikets.update', $tiket->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="form-input w-full border border-gray-500 focus:border-indigo-500 focus:ring-indigo-500">
+                <div class="mb-4 mt-4 ml-3 mr-3">
+                    <label for="kateogri1" class="block text-gray-500 text-sm font-medium mb-2">Nama
+                        Jenis Kategori</label>
+                    <input type="text" id="kateogri2" name="category" value="{{ $tiket->category }}"
+                        class="
+                                            form-input="form-input" w-full="w-full"
+                        rounded-md="rounded-md" border="border" border-gray-400="border-gray-400"
+                        focus:border-indigo-500="focus:border-indigo-500" focus:ring-indigo-500"
+                        placeholder="
+                                            masukkan="Masukkan" jenis="Jenis"
+                        kategori"="Kategori"">
                                     </div>
                                     <div class="mb-4 mt-4 ml-3 mr-3">
                                         <label for="hargaTiket1" class="block text-gray-500 text-sm font-medium mb-2">Harga tiket</label>
@@ -239,11 +271,10 @@
                                                 value="{{ $tiket->price }}"
                                                 class="
                                                 form-input="form-input"
-                                        w-full="w-full" rounded-md="rounded-md" border="border"
-                                        border-gray-400="border-gray-400"
-                                        focus:border-indigo-500="focus:border-indigo-500"
-                                        focus:ring-indigo-500="focus:ring-indigo-500" ml-1="ml-1" mr-1"
-                                        placeholder="
+                        w-full="w-full" rounded-md="rounded-md" border="border" border-gray-400="border-gray-400"
+                        focus:border-indigo-500="focus:border-indigo-500"
+                        focus:ring-indigo-500="focus:ring-indigo-500" ml-1="ml-1" mr-1"
+                        placeholder="
                                                 rp"="Rp"">
                                         </div>
                                         <div class="mb-4 mt-4">
@@ -257,13 +288,14 @@
                                                 value="{{ $tiket->stock }}"
                                                 class="
                                                 form-input="form-input"
-                                        w-full="w-full" rounded-md="rounded-md" border="border"
-                                        border-gray-400="border-gray-400"
-                                        focus:border-indigo-500="focus:border-indigo-500"
-                                        focus:ring-indigo-500"="focus:ring-indigo-500"">
+                        w-full="w-full" rounded-md="rounded-md" border="border" border-gray-400="border-gray-400"
+                        focus:border-indigo-500="focus:border-indigo-500"
+                        focus:ring-indigo-500"="focus:ring-indigo-500"">
                                         </div>
                                     </div>
                                 </div>
+                                <div>
+                                <center>
 
                                 <button
                                     type="submit"
@@ -282,14 +314,17 @@
                                             stroke-linejoin="round"
                                             stroke-width="2"
                                             d=" m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0
-                                        0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565
-                                        6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
-                                    </svg>
-                                    <span>Unggah</span>
-                                    </button>
-                        </form>
+                        0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015
+                        2.015 0 0 1 2.852 0Z" />
+                    </svg>
+                    <span>Unggah</span>
+                    </button>
+                    </center>
+                </div>
+        </form>
+    </div>
 
-                    <div class="">
+    {{-- <div class="">
                         <div class="pt-3 grid grid-cols-2 gap-4">
                             <div class="m-2">
                                 <label for="tanggalPeluncuran"
@@ -304,26 +339,25 @@
                                 <input type="date" class="form-control" id="tanggalTutup">
                             </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update Tiket</button>
+                    </div> --}}
+    {{-- <button type="submit" class="btn btn-primary">Update Tiket</button>
 
-                    <div class="mb-5 mt-5 justify-content">
-                        <center>
-                            <button type="button"
-                                class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">
-                                <svg class="w-6 h-6 text-gray-800" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewbox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
-                                </svg>
-                                <span>Unggah</span>
-                            </button>
-                        </center>
-                    </div>
-            </div>
-        </div>
+                <div class="mb-5 mt-5 justify-content">
+                    <center>
+                        <button type="button"
+                            class="flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg">
+                            <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewbox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
+                            </svg>
+                            <span>Unggah</span>
+                        </button>
+                    </center> --}}
+    </div>
+    </div>
+    </div>
 
 </body>
 

@@ -49,7 +49,7 @@ Route::post('/konsers', [KonserController::class, 'store'])->name('konser.store'
 Route::get('/konsers', [KonserController::class, 'index'])->name('konser.index');
 // Route::get('/admin/{konser}', [KonserController::class, 'show'])->name('konser.show');
 Route::get('/konsers/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
-Route::put('/konsers/{konser}', [KonserController::class, 'update'])->name('konser.update');
+Route::put('/konsers/{konser}/update', [KonserController::class, 'update'])->name('konser.update');
 Route::delete('/konsers/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
 
 Route::get('/tikets', [TiketController::class, 'index'])->name('tikets.index');
@@ -57,7 +57,7 @@ Route::get('/tikets/create', [TiketController::class, 'create'])->name('tikets.c
 Route::post('/tikets', [TiketController::class, 'store'])->name('tikets.store');
 // Route::get('/tikets/{tiket}', [TiketController::class, 'show'])->name('tikets.show');
 Route::get('/tikets/{tiket}/edit', [TiketController::class, 'edit'])->name('tikets.edit');
-Route::put('/tikets/{tiket}', [TiketController::class, 'update'])->name('tikets.update');
+Route::put('/tikets/{tiket}/update', [TiketController::class, 'update'])->name('tikets.update');
 Route::delete('/tikets/{tiket}', [TiketController::class, 'destroy'])->name('tikets.destroy');
 Route::post('/calculate', [TiketController::class, 'calculate'])->name('tickets.calculate');
 

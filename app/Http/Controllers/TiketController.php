@@ -57,10 +57,10 @@ class TiketController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Tiket $tiket)
     {
-        $tiket = Tiket::findorfail($id);
-        $konser = Konser::with('detail')->find($id);
+        $tiket = Tiket::findorfail($tiket->id);
+        $konser = Konser::all();
         
         return view('admin_edit_tiket', compact('tiket', 'konser'));
     }
@@ -77,7 +77,8 @@ class TiketController extends Controller
             'stock' => 'required|integer|min:0',
         ]);
 
-        $tiket = Tiket::findOrFail($tiket->id);
+        $tiket = Tiket::findorfail($tiket->id);
+        $tiket->update($request->all());
 
         // Simpan perubahan pada tiket ke dalam database
         // $tiket->update($request->all());

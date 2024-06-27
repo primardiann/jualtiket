@@ -24,7 +24,6 @@ class StoreKonserRequest extends FormRequest
         return [
             'nama_konser' => 'required|string|max:255',
             'tanggal' => 'required|date',
-            'harga' => 'required|numeric',
             'lokasi' => 'required|string|max:255',
             'nama_artis' => 'required|string|max:255',
             'deskripsi' => 'required|string',
