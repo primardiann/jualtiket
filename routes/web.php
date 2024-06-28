@@ -29,15 +29,8 @@ Route::get('/', function () {
 // Route for AdminController
 Route::get('/admin/tampilan-awal', [ControllersAdminController::class, 'index'])->name('admin_tampilan_awal');
 Route::get('/admin/data', [ControllersAdminController::class, 'show'])->name('admin_data_tiket');
-
 Route::get('/data-pembeli', [ControllersAdminController::class, 'showData'])->name('data-pembeli');
-// routes/web.php
-Route::get('/detail-pembayaran', [DetailController::class, 'show'])->name('detail_pembayaran');
-Route::post('/process-order', [DetailController::class, 'processOrder'])->name('process_order');
 
-// Route Setelah login
-Route::get('/detail_pembayaran', [DetailController::class, 'show'])->name('detail');
-Route::post('/detail_pembayaran/store', [DetailController::class, 'store'])->name('detail_pembayaran.store');
 // Route for PembayaranController Sebelum Login
 Route::get('/pembayaran/detail', [ControllersPembayaranController::class, 'detail'])->name('detail_pembayaran');
 
@@ -45,8 +38,11 @@ Route::get('/pembayaran/detail', [ControllersPembayaranController::class, 'detai
 Route::get('/sign_up', [SignUpController::class, 'showRegistrationForm'])->name('sign_up');
 Route::post('/sign_up', [SignUpController::class, 'register'])->name('sign_up.post');
 
+
+
 // Deskripsi
 Route::get('deskripsi', [DeskripsiController::class, 'show'])->name('deskripsi');
+
 
 // Route untuk halaman kategori tiket
 // Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori_tiket');
@@ -54,7 +50,8 @@ Route::post('/beli-tiket', [KategoriTiketController::class, 'beliTiket'])->name(
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'show'])->name('kategori.show');
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori.index');
 
-//CRUD
+
+//CRUD bagian admin
 Route::get('/konsers/create', [KonserController::class, 'create'])->name('konser.create');
 Route::post('/konsers', [KonserController::class, 'store'])->name('konser.store');
 Route::get('/konsers', [KonserController::class, 'index'])->name('konser.index');
@@ -62,6 +59,8 @@ Route::get('/konsers', [KonserController::class, 'index'])->name('konser.index')
 Route::get('/konsers/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
 Route::put('/konsers/{konser}/update', [KonserController::class, 'update'])->name('konser.update');
 Route::delete('/konsers/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
+
+
 
 Route::get('/tikets', [TiketController::class, 'index'])->name('tikets.index');
 Route::get('/tikets/create', [TiketController::class, 'create'])->name('tikets.create');

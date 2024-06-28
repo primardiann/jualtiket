@@ -33,4 +33,18 @@ class DetailController extends Controller
 
         return redirect()->route('detail_pembayaran');
     }
+
+    public function processVirtualAccountPayment(Request $request)
+    {
+        // Logika pembayaran menggunakan Virtual Account
+        // Contoh:
+        // - Generate virtual account number
+        // - Kirim instruksi pembayaran
+        // - Simpan transaksi ke database
+        // - Kirim email atau notifikasi
+        // - Redirect ke halaman sukses atau gagal pembayaran
+
+        // Misalnya, Anda ingin langsung redirect ke halaman sukses
+        return redirect()->route('payment_success')->with('success', 'Pembayaran berhasil.');
+    }
 }

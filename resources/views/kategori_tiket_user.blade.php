@@ -58,18 +58,15 @@
         </div>
     </nav>
 
-
-
-    <form action="{{ route('process_order') }}" method="POST">
-        @csrf
+    <div class="relative overflow-x-auto p-8 m-5">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3">Category</th>
                     <th scope="col" class="px-6 py-3">Stock</th>
                     <th scope="col" class="px-6 py-3">Price</th>
-                    <th scope="col" class="px-6 py-3">Quantity</th>
-                    <th scope="col" class="px-6 py-3">Total Price</th>
+                    <th scope="col" class="px-6 py-3">Kuantitas</th>
+                    <th scope="col" class="px-6 py-3">Total Harga</th>
                 </tr>
             </thead>
             <tbody>
@@ -79,35 +76,41 @@
                         <td class="px-6 py-3">{{ $data->stock }}</td>
                         <td class="px-6 py-3">{{ $data->price }}</td>
                         <td class="px-6 py-3">
-                            <input type="number" name="quantity[{{ $data->id }}]" class="quantity-input"
-                                data-price="{{ $data->price }}" min="1" max="{{ $data->stock }}">
+                            <input type="number" min="1" max="{{ $data->stock }}" value="1"
+                                class="kuantitas border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                data-price="{{ $data->price }}" />
                         </td>
-                        <td class="px-6 py-3 total-price" data-price="{{ $data->price }}">Rp 0,-</td>
+                        <td class="px-6 py-3 total-harga">{{ $data->price }}</td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6" class="px-6 py-3 text-center">No data available</td>
+                        <td colspan="5" class="px-6 py-3 text-center">No data available</td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.kuantitas').forEach(function(input) {
+                    input.addEventListener('input', function() {
+                        const price = parseFloat(this.getAttribute('data-price'));
+                        const quantity = parseInt(this.value);
+                        const totalHargaElement = this.closest('tr').querySelector('.total-harga');
+                        totalHargaElement.textContent = (price * quantity).toFixed(2);
+                    });
 
-    </form>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.quantity-input').forEach(function(input) {
-                input.addEventListener('input', function() {
-                    const price = parseFloat(this.getAttribute('data-price'));
-                    const quantity = parseInt(this.value);
-                    const totalPriceElement = this.closest('tr').querySelector('.total-price');
-                    const totalPrice = price * quantity;
-                    totalPriceElement.textContent = `Rp ${totalPrice.toLocaleString('id-ID')},-`;
+                    // Initialize the total price for default quantity
+                    const price = parseFloat(input.getAttribute('data-price'));
+                    const totalHargaElement = input.closest('tr').querySelector('.total-harga');
+                    totalHargaElement.textContent = (price * input.value).toFixed(2);
                 });
             });
-        });
-    </script>
+        </script>
+    </div>
 
+
+
+    </div>
     <center>
         <a href="{{ route('detail') }}" type="button"
             class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">BELI</a>
