@@ -8,7 +8,6 @@ use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\AdminController as ControllersAdminController;
 use App\Http\Controllers\DataController;
-use App\Http\Controllers\DetailController;
 use App\Http\Controllers\PembayaranController as ControllersPembayaranController;
 
 /*
@@ -28,16 +27,14 @@ Route::get('/', function () {
 
 // Route for AdminController
 Route::get('/admin/tampilan-awal', [ControllersAdminController::class, 'index'])->name('admin_tampilan_awal');
-Route::get('/admin/data', [ControllersAdminController::class, 'show'])->name('admin_data_tiket');
-Route::get('/data-pembeli', [ControllersAdminController::class, 'showData'])->name('data-pembeli');
 
-// Route for PembayaranController Sebelum Login
+// Route for PembayaranController
 Route::get('/pembayaran/detail', [ControllersPembayaranController::class, 'detail'])->name('detail_pembayaran');
+
 
 // Route daftar
 Route::get('/sign_up', [SignUpController::class, 'showRegistrationForm'])->name('sign_up');
 Route::post('/sign_up', [SignUpController::class, 'register'])->name('sign_up.post');
-
 
 
 // Deskripsi
@@ -51,16 +48,14 @@ Route::get('/kategori_tiket', [KategoriTiketController::class, 'show'])->name('k
 Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('kategori.index');
 
 
-//CRUD bagian admin
+//CRUD
 Route::get('/konsers/create', [KonserController::class, 'create'])->name('konser.create');
 Route::post('/konsers', [KonserController::class, 'store'])->name('konser.store');
 Route::get('/konsers', [KonserController::class, 'index'])->name('konser.index');
 // Route::get('/admin/{konser}', [KonserController::class, 'show'])->name('konser.show');
-Route::get('/konsers/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
+Route::get('/edit/{konserId}/edit', [KonserController::class, 'edit'])->name('konser.edit');
 Route::put('/konsers/{konser}/update', [KonserController::class, 'update'])->name('konser.update');
 Route::delete('/konsers/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
-
-
 
 Route::get('/tikets', [TiketController::class, 'index'])->name('tikets.index');
 Route::get('/tikets/create', [TiketController::class, 'create'])->name('tikets.create');

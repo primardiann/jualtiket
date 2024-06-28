@@ -10,8 +10,7 @@ class PembayaranController extends Controller
     public function detail()
     {
         $tikets = Tiket::all();
-        // Mengirimkan data Tiket ke view 'kategori_tiket'
-        return view('kategori_tiket_user', compact('tikets'));
+        return view('detail_pembayaran', compact('tikets'));
     }
     
 }

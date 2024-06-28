@@ -57,52 +57,51 @@
             </div>
         </div>
     </nav>
+    <div>
+        <form action="{{ route('process.order') }}" method="POST">
+            @csrf
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Category</th>
+                        <th scope="col" class="px-6 py-3">Stock</th>
+                        <th scope="col" class="px-6 py-3">Price</th>
+                        <th scope="col" class="px-6 py-3">Quantity</th>
+                        <th scope="col" class="px-6 py-3">Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($tikets as $index => $data)
+                        <tr>
+                            <td class="px-6 py-3">{{ $data->category }}</td>
+                            <td class="px-6 py-3">{{ $data->stock }}</td>
+                            <td class="px-6 py-3">{{ $data->price }}</td>
+                            <td class="px-6 py-3">
+                                <input type="number" name="quantity[{{ $data->id }}]" class="quantity-input"
+                                    data-price="{{ $data->price }}" min="1" max="{{ $data->stock }}">
+                            </td>
+                            <td class="px-6 py-3 total-price" data-price="{{ $data->price }}">Rp 0,-</td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6" class="px-6 py-3 text-center">No data available</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
 
-    <div class="relative overflow-x-auto p-8 m-5">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr>
-                    <th scope="col" class="px-6 py-3">Category</th>
-                    <th scope="col" class="px-6 py-3">Stock</th>
-                    <th scope="col" class="px-6 py-3">Price</th>
-                    <th scope="col" class="px-6 py-3">Kuantitas</th>
-                    <th scope="col" class="px-6 py-3">Total Harga</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($tikets as $index => $data)
-                    <tr>
-                        <td class="px-6 py-3">{{ $data->category }}</td>
-                        <td class="px-6 py-3">{{ $data->stock }}</td>
-                        <td class="px-6 py-3">{{ $data->price }}</td>
-                        <td class="px-6 py-3">
-                            <input type="number" min="1" max="{{ $data->stock }}" value="1"
-                                class="kuantitas border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                data-price="{{ $data->price }}" />
-                        </td>
-                        <td class="px-6 py-3 total-harga">{{ $data->price }}</td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="5" class="px-6 py-3 text-center">No data available</td>
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
+        </form>
+
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                document.querySelectorAll('.kuantitas').forEach(function(input) {
+                document.querySelectorAll('.quantity-input').forEach(function(input) {
                     input.addEventListener('input', function() {
                         const price = parseFloat(this.getAttribute('data-price'));
                         const quantity = parseInt(this.value);
-                        const totalHargaElement = this.closest('tr').querySelector('.total-harga');
-                        totalHargaElement.textContent = (price * quantity).toFixed(2);
+                        const totalPriceElement = this.closest('tr').querySelector('.total-price');
+                        const totalPrice = price * quantity;
+                        totalPriceElement.textContent = `Rp ${totalPrice.toLocaleString('id-ID')},-`;
                     });
-
-                    // Initialize the total price for default quantity
-                    const price = parseFloat(input.getAttribute('data-price'));
-                    const totalHargaElement = input.closest('tr').querySelector('.total-harga');
-                    totalHargaElement.textContent = (price * input.value).toFixed(2);
                 });
             });
         </script>

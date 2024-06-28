@@ -15,7 +15,7 @@
         <div class="p-4">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="images/Logo.jpg" class="h-8" alt="Logo Konser" />
+                    <img class="w-12 h-12 rounded-full" src="/images/Logo.jpg" alt="Rounded avatar">
                     <span class="self-center text-2xl font-semibold whitespace-nowrap">Concert.tix</span>
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button"
