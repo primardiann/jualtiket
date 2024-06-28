@@ -95,7 +95,7 @@ class KonserController extends Controller
 
         // dd($tiket);
 
-        return view('admin_edit_tiket', compact('konser','tiket'));
+        return view('admin_edit_konser', compact('konser','tiket'));
     }
 
     /**
@@ -115,6 +115,8 @@ class KonserController extends Controller
             'tanggal_akhir' => 'required|date|after_or_equal:tanggal_awal',
         ]);
 
+        // dd($request);
+
         // Check if image is uploaded
         if ($request->hasFile('foto_konser')) {
             // Upload new image
@@ -130,20 +132,20 @@ class KonserController extends Controller
             $konser->foto_konser = $image->hashName();
         }
 
-        // Update Konser with other attributes
+        //Update Konser with other attributes
 
-        // $konser->update([
-        //     'nama_konser' => $request->nama_konser,
-        //     'tanggal' => $request->tanggal,
-        //     'lokasi' => $request->lokasi,
-        //     'nama_artis' => $request->nama_artis,
-        //     'deskripsi' => $request->deskripsi,
-        //     'tanggal_awal' => $request->tanggal_awal,
-        //     'tanggal_akhir' => $request->tanggal_akhir,
-        // ]);
+        $konser->update([
+            'nama_konser' => $request->nama_konser,
+            'tanggal' => $request->tanggal,
+            'lokasi' => $request->lokasi,
+            'nama_artis' => $request->nama_artis,
+            'deskripsi' => $request->deskripsi,
+            'tanggal_awal' => $request->tanggal_awal,
+            'tanggal_akhir' => $request->tanggal_akhir,
+        ]);
 
-        // // Redirect atau response setelah update berhasil
-        // return redirect()->route('konser.index')->with('success', 'Konser berhasil diperbarui.');
+        // Redirect atau response setelah update berhasil
+        return redirect()->route('konser.index')->with('success', 'Konser berhasil diperbarui.');
     }
 
     /**

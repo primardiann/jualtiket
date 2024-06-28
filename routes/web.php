@@ -60,7 +60,7 @@ Route::post('/tikets', [TiketController::class, 'store'])->name('tikets.store');
 Route::get('/tikets/{tiket}/edit', [TiketController::class, 'edit'])->name('tikets.edit');
 Route::put('/tikets/{tiket}/update', [TiketController::class, 'update'])->name('tikets.update');
 Route::delete('/tikets/{tiket}', [TiketController::class, 'destroy'])->name('tikets.destroy');
-Route::post('/calculate', [TiketController::class, 'calculate'])->name('tickets.calculate');
+
 
 // Route::middleware(['auth'])->group(function () {
 //     Route::get('/dashboard', function () {
