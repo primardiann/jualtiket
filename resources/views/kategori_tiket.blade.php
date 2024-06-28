@@ -50,6 +50,7 @@
             </div>
         </div>
     </nav>
+    
 
     <div class="relative overflow-x-auto p-8 m-5">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">

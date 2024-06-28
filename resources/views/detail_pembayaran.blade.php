@@ -32,6 +32,7 @@
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">Logout</button>
                     </form>
                 </li>
+                <br>
                 <li>
                     <button type="button"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">Tiket
@@ -50,110 +51,121 @@
         </div>
     </div>
 </nav>
-<div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6">
-    <h5 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
-        Metode Pembayaran
-    </h5>
-    <p class="text-sm font-normal text-gray-500">pilih metode pembayaran di bawah ini.</p>
-    <ul class="my-4 space-y-3">
-        <li>
-            <a href="#"
-                class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                <svg aria-hidden="true" class="h-4" viewbox="0 0 40 38" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <span class="flex-1 ms-3 whitespace-nowrap">Credit / Debit Card</span>
-            </a>
-        </li>
-        <li>
-            <a href="#"
-                class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                <svg aria-hidden="true" class="h-5" viewbox="0 0 292 292" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <span class="flex-1 ms-3 whitespace-nowrap">Virtual Account</span>
-            </a>
-        </li>
-        <li>
-            <a href="#"
-                class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                <svg aria-hidden="true" svg="svg" class="h-5" viewbox="0 0 75.591 75.591"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <lineargradient id="a" gradienttransform="matrix(0 -54.944 -54.944 0 23.62 79.474)"
-                        gradientunits="userSpaceOnUse" x2="1">
-                        <stop offset="0" stop-color="#ff1b2d" />
-                        <stop offset=".3" stop-color="#ff1b2d" />
-                        <stop offset=".614" stop-color="#ff1b2d" />
-                        <stop offset="1" stop-color="#a70014" />
-                    </lineargradient>
-                    <lineargradient id="b" gradienttransform="matrix(0 -48.595 -48.595 0 37.854 76.235)"
-                        gradientunits="userSpaceOnUse" x2="1">
-                        <stop offset="0" stop-color="#9c0000" />
-                        <stop offset=".7" stop-color="#ff4b4b" />
-                        <stop offset="1" stop-color="#ff4b4b" />
-                    </lineargradient>
-                    <g transform="matrix(1.3333 0 0 -1.3333 0 107.2)">
-                        <span class="flex-1 ms-3 whitespace-nowrap">Wallet</span>
-            </a>
-        </li>
-        <li>
-            <a href="#"
-                class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                <svg aria-hidden="true" class="h-5" viewbox="0 0 512 512" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <defs>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Installment</span>
-            </a>
-        </li>
-    </ul>
-</div>
 
-<div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-        <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white">
-            Detail pembayaran
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50"></thead>
-        <tbody>
-            <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Reguler (x2)
-                </th>
-                <td class="px-3 py-1">
-                    Rp.2.000.000,-
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    VIP (x2)
-                </th>
-                <td class="px-3 py-1">
-                    Rp.4.000.000,-
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Admin fee
-                </th>
-                <td class="px-6 py-4">
-                    Rp.0,-
-                </td>
-            </tr>
-        <tfoot>
-            <tr>
-                <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">
-                    TOTAL
-                </th>
-                <td class="px-3 py-1">
-                    Rp.6.000.000,-
-                </td>
-            </tr>
-        </tfoot>
-        </tbody>
-    </table>
-    <div>
-        <center>
-            <button type="button"
-                class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">
-                BELI
-            </button>
-        </center>
+<br>
+
+<div class="flex gap-4">
+
+    <div class="w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 mb-4">
+        <h5 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
+            Metode Pembayaran
+        </h5>
+        <p class="text-sm font-normal text-gray-500">pilih metode pembayaran di bawah ini.</p>
+        <ul class="my-4 space-y-3">
+            <li>
+                <a href="#"
+                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
+                    <svg aria-hidden="true" class="h-4" viewbox="0 0 40 38" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <span class="flex-1 ms-3 whitespace-nowrap">Credit / Debit Card</span>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
+                    <svg aria-hidden="true" class="h-5" viewbox="0 0 292 292" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <span class="flex-1 ms-3 whitespace-nowrap">Virtual Account</span>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
+                    <svg aria-hidden="true" svg="svg" class="h-5" viewbox="0 0 75.591 75.591"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <lineargradient id="a" gradienttransform="matrix(0 -54.944 -54.944 0 23.62 79.474)"
+                            gradientunits="userSpaceOnUse" x2="1">
+                            <stop offset="0" stop-color="#ff1b2d" />
+                            <stop offset=".3" stop-color="#ff1b2d" />
+                            <stop offset=".614" stop-color="#ff1b2d" />
+                            <stop offset="1" stop-color="#a70014" />
+                        </lineargradient>
+                        <lineargradient id="b" gradienttransform="matrix(0 -48.595 -48.595 0 37.854 76.235)"
+                            gradientunits="userSpaceOnUse" x2="1">
+                            <stop offset="0" stop-color="#9c0000" />
+                            <stop offset=".7" stop-color="#ff4b4b" />
+                            <stop offset="1" stop-color="#ff4b4b" />
+                        </lineargradient>
+                        <g transform="matrix(1.3333 0 0 -1.3333 0 107.2)">
+                            <span class="flex-1 ms-3 whitespace-nowrap">Wallet</span>
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
+                    <svg aria-hidden="true" class="h-5" viewbox="0 0 512 512" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Installment</span>
+                </a>
+            </li>
+        </ul>
+
     </div>
+
+
+    <div class="col-span-1">
+        <div class="w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 mb-4">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                <h5 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
+                    Detail pembayaran
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50"></thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                Reguler (x2)
+                            </th>
+                            <td class="px-3 py-1">
+                                Rp.2.000.000,-
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                VIP (x2)
+                            </th>
+                            <td class="px-3 py-1">
+                                Rp.4.000.000,-
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                Admin fee
+                            </th>
+                            <td class="px-6 py-4">
+                                Rp.0,-
+                            </td>
+                        </tr>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">
+                                TOTAL
+                            </th>
+                            <td class="px-3 py-1">
+                                Rp.6.000.000,-
+                            </td>
+                        </tr>
+                    </tfoot>
+                    </tbody>
+            </table>
+            <div>
+                <center>
+                    <button type="button"
+                        class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">
+                        BELI
+                    </button>
+                </center>
+            </div>
+        </div>
+    </div>
+
 </div>
