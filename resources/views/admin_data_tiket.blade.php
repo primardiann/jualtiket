@@ -184,16 +184,18 @@
         <a href="{{ route('tikets.create') }}"
             class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200">Tambah
             Tiket</a>
+
+            <br>
         @forelse ($tikets as $index => $data)
             <div class="grid grid-cols-3 gap-4 mb-4">
                 <div class="max-w-xs p-4 pt-2 bg-white border-2 border-black-200 rounded-lg">
                     <a href="#">
                         <h3 class="font-bold tracking-tight text-gray-900">{{ $data->category }}</h3>
                     </a>
-                    <p class="font-normal">total stok {{ $data->stock }}</p>
-                    <p class="font-normal">stok awal 100</p>
-                    <p class="font-normal">tiket terjual 30</p>
-                    <p class="mb-2 font-normal">sisa stok 70</p>
+                    <p class="font-normal"> Total Stok : {{ $data->stock }}</p>
+                    <p class="font-normal">Harga Tiket : Rp. {{ $data->price }}</p>
+                    {{-- <p class="font-normal">tiket terjual 30</p>
+                    <p class="mb-2 font-normal">sisa stok 70</p> --}}
                     <a href="{{ route('tikets.edit', $data->id) }}"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
                         edit

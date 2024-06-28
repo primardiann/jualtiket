@@ -7,6 +7,7 @@ use App\Http\Controllers\KonserController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\AdminController as ControllersAdminController;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\PembayaranController as ControllersPembayaranController;
 
 /*
@@ -48,7 +49,7 @@ Route::get('/konsers/create', [KonserController::class, 'create'])->name('konser
 Route::post('/konsers', [KonserController::class, 'store'])->name('konser.store');
 Route::get('/konsers', [KonserController::class, 'index'])->name('konser.index');
 // Route::get('/admin/{konser}', [KonserController::class, 'show'])->name('konser.show');
-Route::get('/konsers/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
+Route::get('/edit/{konserId}/edit', [KonserController::class, 'edit'])->name('konser.edit');
 Route::put('/konsers/{konser}/update', [KonserController::class, 'update'])->name('konser.update');
 Route::delete('/konsers/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
 

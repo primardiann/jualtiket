@@ -6,6 +6,7 @@ use App\Http\Requests\StoreKonserRequest;
 use App\Models\Konser;
 use App\Models\Tiket;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use App\Http\Requests\UpdateKonserRequest;
 use Illuminate\Support\Facades\Storage;
 
@@ -87,12 +88,14 @@ class KonserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Konser $konser)
     {
-        $konser = Konser::findorfail($id); // Ensure you retrieve a single Konser instance
-        $tiket = Tiket::where('id', $id)->first(); // Ensure you retrieve a single Tiket instance related to the Konser
+        $konser = Konser::findorfail($konser->id);
+        $tiket = Tiket::all(); // retrieve tikets data here as well
 
-        return view('admin_edit_tiket', compact('konser', 'tiket'));
+        // dd($tiket);
+
+        return view('admin_edit_tiket', compact('konser','tiket'));
     }
 
     /**

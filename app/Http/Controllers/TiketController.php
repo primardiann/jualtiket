@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tiket;
+use Illuminate\View\View;
 use App\Models\Konser;
 use App\Http\Requests\StoreTiketRequest;
 use App\Http\Requests\UpdateTiketRequest;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class TiketController extends Controller
 {
@@ -60,9 +62,12 @@ class TiketController extends Controller
     public function edit(Tiket $tiket)
     {
         $tiket = Tiket::findorfail($tiket->id);
-        $konser = Konser::all();
+        // $konser = Konser::all(); // retrieve konsers data here as well
+
+        // dd($tiket);
+
+        return view('admin_edit_tiket', compact('tiket'));
         
-        return view('admin_edit_tiket', compact('tiket', 'konser'));
     }
 
     /**
@@ -70,6 +75,7 @@ class TiketController extends Controller
      */
     public function update(UpdateTiketRequest $request, Tiket $tiket)
     {
+
         // Validasi input
         $request->validate([
             'category' => 'required',

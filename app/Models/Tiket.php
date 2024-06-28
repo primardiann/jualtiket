@@ -11,4 +11,9 @@ class Tiket extends Model
 
     protected $table = 'tikets';
     protected $fillable = ['category', 'stock', 'price'];
+
+    // public function konser()
+    // {
+    //     return $this->belongsTo(Konser::class);
+    // }
 }
