@@ -31,6 +31,9 @@ Route::get('/admin/tampilan-awal', [ControllersAdminController::class, 'index'])
 Route::get('/admin/data', [ControllersAdminController::class, 'show'])->name('admin_data_tiket');
 
 Route::get('/data-pembeli', [ControllersAdminController::class, 'showData'])->name('data-pembeli');
+// routes/web.php
+Route::get('/detail-pembayaran', [DetailController::class, 'show'])->name('detail_pembayaran');
+Route::post('/process-order', [DetailController::class, 'processOrder'])->name('process_order');
 
 // Route Setelah login
 Route::get('/detail_pembayaran', [DetailController::class, 'show'])->name('detail');

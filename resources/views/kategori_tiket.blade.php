@@ -50,7 +50,7 @@
             </div>
         </div>
     </nav>
-    
+
 
     <div class="relative overflow-x-auto p-8 m-5">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
@@ -61,7 +61,6 @@
                     <th scope="col" class="px-6 py-3">Price</th>
                     <th scope="col" class="px-6 py-3">Kuantitas</th>
                     <th scope="col" class="px-6 py-3">Total Harga</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -70,15 +69,16 @@
                         <td class="px-6 py-3">{{ $data->category }}</td>
                         <td class="px-6 py-3">{{ $data->stock }}</td>
                         <td class="px-6 py-3">{{ $data->price }}</td>
-                        <td class="px-6 py-3">Kuantitas</td>
-                        <td class="px-6 py-3">Total Harga</td>
                         <td class="px-6 py-3">
-                            <a href="{{ route('kategori.index') }}" class="text-blue-600 hover:underline"></a>
+                            <input type="number" min="1" max="{{ $data->stock }}" value="1"
+                                class="kuantitas border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                data-price="{{ $data->price }}" />
                         </td>
+                        <td class="px-6 py-3 total-harga">{{ $data->price }}</td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6" class="px-6 py-3 text-center">No data available</td>
+                        <td colspan="5" class="px-6 py-3 text-center">No data available</td>
                     </tr>
                 @endforelse
             </tbody>
@@ -87,17 +87,22 @@
             document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll('.kuantitas').forEach(function(input) {
                     input.addEventListener('input', function() {
-                        const price = this.getAttribute('data-price');
-                        const quantity = this.value;
+                        const price = parseFloat(this.getAttribute('data-price'));
+                        const quantity = parseInt(this.value);
                         const totalHargaElement = this.closest('tr').querySelector('.total-harga');
                         totalHargaElement.textContent = (price * quantity).toFixed(2);
                     });
+
+                    // Initialize the total price for default quantity
+                    const price = parseFloat(input.getAttribute('data-price'));
+                    const totalHargaElement = input.closest('tr').querySelector('.total-harga');
+                    totalHargaElement.textContent = (price * input.value).toFixed(2);
                 });
             });
         </script>
-
-
     </div>
+
+
     <center>
         <a href="{{ route('login') }}" type="button"
             class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">BELI</a>

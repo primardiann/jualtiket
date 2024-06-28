@@ -4,40 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
+use App\Models\Tiket;
 
 class DetailController extends Controller
 {
-    /**
-     * Tampilkan halaman detail pembayaran.
-     *
-     * @return \Illuminate\View\View
-     */
     public function show()
     {
-        $pembayarans = Pembayaran::orderBy('tgl_pembayaran', 'desc')->get();
-
-        // Tampilkan view 'detail_pembayaran' dengan data pembayaran
-        return view('detail_pembayaran', compact('pembayarans'));
+        $tikets = Tiket::all(); // Mengambil semua data dari tabel tikets
+        return view('detail_pembayaran', compact('tikets'));
     }
 
-
-    /**
-     * Simpan pembayaran baru.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function processOrder(Request $request)
     {
-        $request->validate([
-            'id_pembayaran' => 'required|unique:pembayarans',
-            'tgl_pembayaran' => 'required|date',
-            'metode' => 'required',
-        ]);
+        $quantities = $request->input('quantity');
+        $orderDetails = [];
 
-        Pembayaran::create($request->all());
+        foreach ($quantities as $ticketId => $quantity) {
+            $ticket = Tiket::find($ticketId);
+            $orderDetails[] = [
+                'category' => $ticket->category,
+                'price' => $ticket->price,
+                'quantity' => $quantity,
+                'total_price' => $ticket->price * $quantity,
+            ];
+        }
 
-        return redirect()->route('detail')
-            ->with('success', 'Pembayaran berhasil ditambahkan.');
+        session(['orderDetails' => $orderDetails]);
+
+        return redirect()->route('detail_pembayaran');
     }
 }
