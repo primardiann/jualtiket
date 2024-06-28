@@ -111,6 +111,8 @@
         </div>
     </nav>
 
+    
+
     <br>
     <ol>
         <span class=" text-2xl font-bold whitespace-nowrap" style="margin-left: 100px">Konser Aktif</span>
@@ -126,7 +128,7 @@
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Eras Tour</h5>
                 </a>
                 <p class="mb-3 font-normal text-gray-700">19 Februari 2024</p>
-                <a href="#"
+                <a href="{{ route('admin_data_tiket') }}"
                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
                     Harga Tiket
 
@@ -139,7 +141,7 @@
 
         </div>
 
-       
+
 
         <body>
 
@@ -172,10 +174,8 @@
             </script>
 
         </body>
-        
-            
-        </body>
 
-        </html>
 
-    
+</body>
+
+</html>

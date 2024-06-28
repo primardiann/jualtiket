@@ -76,7 +76,7 @@
                     <hr class="bg-secondary">
                 </li><br>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('admin_data_tiket') }}"
                         class="flex items-center p-3 text-gray-900 rounded-lg border border-blue-400 hover:bg-gray-100 group">
                         <span class="text-center ms-3 whitespace-nowrap">
                             <b>Data Tiket</b>
@@ -85,8 +85,7 @@
                     </a>
                 </li>
                 <br>
-                <a href="data_pembeli"
-                    class="flex justify-items-center align-items-center p-3 text-gray-900 border border-blue-400 rounded-lg hover:bg-gray-100 group">
+                <a href="{{ route('data-pembeli') }}" class="flex items-center p-3 text-gray-900 border border-blue-400 rounded-lg hover:bg-gray-100 group">
                     <span class="text-center ms-3 whitespace-nowrap">
                         <b>Data Pembeli</b>
                     </span>
@@ -185,7 +184,7 @@
             class="mb-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200">Tambah
             Tiket</a>
 
-            <br>
+        <br>
         @forelse ($tikets as $index => $data)
             <div class="grid grid-cols-3 gap-4 mb-4">
                 <div class="max-w-xs p-4 pt-2 bg-white border-2 border-black-200 rounded-lg">
