@@ -60,57 +60,18 @@
         <h5 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
             Metode Pembayaran
         </h5>
-        <p class="text-sm font-normal text-gray-500">pilih metode pembayaran di bawah ini.</p>
+        <p class="text-sm font-normal text-gray-500">Pilih metode pembayaran Virtual Account:</p>
         <ul class="my-4 space-y-3">
             <li>
-                <a href="#"
-                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                    <svg aria-hidden="true" class="h-4" viewbox="0 0 40 38" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <span class="flex-1 ms-3 whitespace-nowrap">Credit / Debit Card</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                    <svg aria-hidden="true" class="h-5" viewbox="0 0 292 292" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                <form action="{{ route('process_virtual_account_payment') }}" method="POST">
+                    @csrf
+                    <button type="submit"
+                        class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
                         <span class="flex-1 ms-3 whitespace-nowrap">Virtual Account</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                    <svg aria-hidden="true" svg="svg" class="h-5" viewbox="0 0 75.591 75.591"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <lineargradient id="a" gradienttransform="matrix(0 -54.944 -54.944 0 23.62 79.474)"
-                            gradientunits="userSpaceOnUse" x2="1">
-                            <stop offset="0" stop-color="#ff1b2d" />
-                            <stop offset=".3" stop-color="#ff1b2d" />
-                            <stop offset=".614" stop-color="#ff1b2d" />
-                            <stop offset="1" stop-color="#a70014" />
-                        </lineargradient>
-                        <lineargradient id="b" gradienttransform="matrix(0 -48.595 -48.595 0 37.854 76.235)"
-                            gradientunits="userSpaceOnUse" x2="1">
-                            <stop offset="0" stop-color="#9c0000" />
-                            <stop offset=".7" stop-color="#ff4b4b" />
-                            <stop offset="1" stop-color="#ff4b4b" />
-                        </lineargradient>
-                        <g transform="matrix(1.3333 0 0 -1.3333 0 107.2)">
-                            <span class="flex-1 ms-3 whitespace-nowrap">Wallet</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                    <svg aria-hidden="true" class="h-5" viewbox="0 0 512 512" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <defs>
-                            <span class="flex-1 ms-3 whitespace-nowrap">Installment</span>
-                </a>
+                    </button>
+                </form>
             </li>
         </ul>
-
     </div>
 
 
@@ -119,38 +80,32 @@
             <h5 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
                 Detail Pembayaran
             </h5>
-            @if (session()->has('orderDetails'))
-                @php
-                    $orderDetails = session('orderDetails');
-                    $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
-                @endphp
+            @foreach ($orderDetails as $detail)
+                <tr>
+                    <br>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                        {{ $detail['category'] }} (x{{ $detail['quantity'] }})
+                    </th>
+                    <br>
+                    <td class="px-3 py-1">
+                        Rp.{{ number_format($detail['total_price'], 2) }}
+                    </td>
+                </tr>
+            @endforeach
+            <tfoot>
+                <br>
+                <tr>
+                    <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">
+                        TOTAL
+                    </th>
+                    <td class="px-3 py-1">
+                        Rp.{{ number_format($totalAmount, 2) }}
+                    </td>
+                </tr>
+            </tfoot>
+            </tbody>
+            </table>
 
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">Category</th>
-                            <th scope="col" class="px-6 py-3">Quantity</th>
-                            <th scope="col" class="px-6 py-3">Total Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($orderDetails as $order)
-                            <tr>
-                                <td class="px-6 py-3">{{ $order['category'] }}</td>
-                                <td class="px-6 py-3">{{ $order['quantity'] }}</td>
-                                <td class="px-6 py-3">Rp {{ number_format($order['total_price'], 0, ',', '.') }},-</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">TOTAL</th>
-                            <td class="px-6 py-4"></td>
-                            <td class="px-6 py-4">Rp {{ number_format($totalAmount, 0, ',', '.') }},-</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            @endif
             <div class="mt-4 text-center">
                 <form action="'{{ route('detail') }}" method="GET">
                     <button type="button"

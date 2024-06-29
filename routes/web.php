@@ -35,6 +35,8 @@ Route::get('/admin/data', [ControllersAdminController::class, 'showData'])->name
 Route::get('/pembayaran/detail', [ControllersPembayaranController::class, 'detail'])->name('detail_pembayaran');
 Route::post('/process-order', [ControllersPembayaranController::class, 'processOrder'])->name('process.order');
 Route::get('/pembayaran/hasil', [ControllersPembayaranController::class, 'showDetailPembayaran'])->name('detail');
+Route::post('/process-virtual-account-payment', [ControllersPembayaranController::class, 'processVirtualAccountPayment'])->name('process_virtual_account_payment');
+Route::get('/payment/success', [ControllersPembayaranController::class, 'success'])->name('payment_success');
 
 
 // Route daftar

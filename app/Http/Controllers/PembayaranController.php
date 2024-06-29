@@ -36,6 +36,36 @@ class PembayaranController extends Controller
     public function showDetailPembayaran()
     {
         $tikets = Tiket::all();
-        return view('detail_pembayaran', compact('tikets'));
+        // Ambil detail order dari session atau database
+        $orderDetails = session('orderDetails');
+        $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
+        
+        return view('detail_pembayaran', compact('tikets','orderDetails', 'totalAmount'));
+    }
+
+    public function processVirtualAccountPayment(Request $request)
+    {
+
+        // Data pembayaran dari form atau session
+        $orderDetails = session('orderDetails');
+        $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
+
+        // Generate nomor virtual account (contoh sederhana)
+        $virtualAccountNumber = 'VA1234567890'; // Anda dapat mengganti dengan logika yang sesuai dengan integrasi Anda
+
+        // Simpan transaksi pembayaran ke database (simulasi)
+        // Anda bisa menggunakan model Transaksi atau tabel yang sesuai di database Anda
+        $transaction = [
+            'virtual_account' => $virtualAccountNumber,
+            'total_amount' => $totalAmount,
+            // Tambahkan informasi tambahan yang diperlukan
+        ];
+        
+        return redirect()->route('payment_success')->with('success', 'Pembayaran berhasil.');
+    }
+
+    public function success()
+    {
+        return view('payment.success'); // Ganti dengan nama view yang sesuai
     }
 }
