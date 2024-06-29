@@ -16,15 +16,20 @@ class SignUpController extends Controller
 
     public function register(Request $request)
     {
-        // Validasi data yang dikirim dari formulir pendaftaran
-        $validatedData = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'phone_number' => 'required|numeric|digits_between:10,15|unique:users',
-            'birthdate' => 'required|date',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+        $validatedData = $request->validate(
+            [
+                'first_name' => 'required|string|max:255',
+                'last_name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'phone_number' => 'required|string|between:10,15|unique:users',
+                'birthdate' => 'required|date',
+                'password' => 'required|string|min:8|confirmed',
+            ],
+            [
+                'email.unique' => 'Email sudah terdaftar.',
+                'phone_number.unique' => 'Nomor telepon sudah terdaftar.',
+            ],
+        );
 
         // Simpan pengguna baru ke database
         $user = User::create([
