@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tiket;
+use App\Models\Pembayaran;
+use Illuminate\Support\Facades\Auth;
 
 class PembayaranController extends Controller
 {
@@ -39,13 +41,12 @@ class PembayaranController extends Controller
         // Ambil detail order dari session atau database
         $orderDetails = session('orderDetails');
         $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
-        
-        return view('detail_pembayaran', compact('tikets','orderDetails', 'totalAmount'));
+
+        return view('detail_pembayaran', compact('tikets', 'orderDetails', 'totalAmount'));
     }
 
     public function processVirtualAccountPayment(Request $request)
     {
-
         // Data pembayaran dari form atau session
         $orderDetails = session('orderDetails');
         $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
@@ -53,14 +54,12 @@ class PembayaranController extends Controller
         // Generate nomor virtual account (contoh sederhana)
         $virtualAccountNumber = 'VA1234567890'; // Anda dapat mengganti dengan logika yang sesuai dengan integrasi Anda
 
-        // Simpan transaksi pembayaran ke database (simulasi)
-        // Anda bisa menggunakan model Transaksi atau tabel yang sesuai di database Anda
-        $transaction = [
-            'virtual_account' => $virtualAccountNumber,
-            'total_amount' => $totalAmount,
-            // Tambahkan informasi tambahan yang diperlukan
-        ];
-        
+        // Simpan id_pembayaran dan order details ke sesi
+        session([
+            'orderDetails' => $orderDetails,
+            'virtualAccountNumber' => $virtualAccountNumber,
+        ]);
+
         return redirect()->route('payment_success')->with('success', 'Pembayaran berhasil.');
     }
 
@@ -69,9 +68,18 @@ class PembayaranController extends Controller
         return view('payment.success'); // Ganti dengan nama view yang sesuai
     }
 
-    public function resi()
+    public function resi(Request $request)
     {
-        // Logika untuk menampilkan halaman resi
-        return view('resi');
+        $tikets = Tiket::all();
+        // Ambil user yang sedang login
+        $user = Auth::user();
+
+        // Ambil data tiket dari session atau logic lainnya
+        $orderDetails = session('orderDetails');
+
+        // Total harga dari order details
+        $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
+
+        return view('resi', compact('tikets', 'user', 'orderDetails', 'totalAmount'));
     }
 }
