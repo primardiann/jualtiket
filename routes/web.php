@@ -7,7 +7,7 @@ use App\Http\Controllers\KonserController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\AdminController as ControllersAdminController;
-use App\Http\Controllers\DataController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PembayaranController as ControllersPembayaranController;
 
 /*
@@ -21,9 +21,11 @@ use App\Http\Controllers\PembayaranController as ControllersPembayaranController
 |
 */
 
-Route::get('/', function () {
-    return view('tampilan_awal');
-});
+// Route::get('/', function () {
+//     return view('tampilan_awal');
+// });
+
+Route::get('/', [HomeController::class, 'index'])->name('tampilan_awal');
 
 // Route for AdminController
 Route::get('/admin/tampilan-awal', [ControllersAdminController::class, 'index'])->name('admin_tampilan_awal');
@@ -46,7 +48,8 @@ Route::post('/sign_up', [SignUpController::class, 'register'])->name('sign_up.po
 
 
 // Deskripsi
-Route::get('deskripsi', [DeskripsiController::class, 'show'])->name('deskripsi');
+Route::get('Konsers{konser}/deskripsi', [DeskripsiController::class, 'show'])->name('deskripsi');
+
 
 
 // Route untuk halaman kategori tiket
@@ -60,7 +63,7 @@ Route::get('/kategori_tiket', [KategoriTiketController::class, 'index'])->name('
 Route::get('/konsers/create', [KonserController::class, 'create'])->name('konser.create');
 Route::post('/konsers', [KonserController::class, 'store'])->name('konser.store');
 Route::get('/konsers', [KonserController::class, 'index'])->name('konser.index');
-// Route::get('/admin/{konser}', [KonserController::class, 'show'])->name('konser.show');
+Route::get('/Konsers/{konser}/show', [KonserController::class, 'show'])->name('konser.show');
 Route::get('/konsers/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
 Route::put('/konsers/{konser}/update', [KonserController::class, 'update'])->name('konser.update');
 Route::delete('/konsers/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');

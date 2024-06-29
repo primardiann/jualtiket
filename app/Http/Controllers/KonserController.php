@@ -79,10 +79,10 @@ class KonserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Konser $konser)
     {
-        $konser = Konser::findOrFail($id); // Mengambil data konser berdasarkan ID
-        return view('data_pembeli', compact('konser'));
+        $konser = Konser::findOrFail($konser->id); // Mengambil data konser berdasarkan ID
+        return view('show_konser', compact('konser'));
     }
 
     /**
