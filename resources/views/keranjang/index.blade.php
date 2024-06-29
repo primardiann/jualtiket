@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Purchase</title>
+    <title>Shopping Cart</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -38,11 +38,7 @@
                                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">Logout</button>
                             </form>
                         </li>
-                        <li>
-                            <a href="{{ route('keranjang.index') }}"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">Tiket
-                                saya</a>
-                        </li>
+
 
                         <li>
                             <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full">
@@ -58,61 +54,58 @@
             </div>
         </div>
     </nav>
-    <div class="mx-auto max-w-3xl mt-8">
+
+
+
+
+
+    <div class="mx-auto max-w-3xl mt-8 ml-2">
         <form action="{{ route('process.order') }}" method="POST">
             @csrf
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">Category</th>
-                        <th scope="col" class="px-6 py-3">Stock</th>
-                        <th scope="col" class="px-6 py-3">Price</th>
-                        <th scope="col" class="px-6 py-3">Quantity</th>
-                        <th scope="col" class="px-6 py-3">Total Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($tikets as $index => $data)
-                        <tr>
-                            <td class="px-6 py-3">{{ $data->category }}</td>
-                            <td class="px-6 py-3">{{ $data->stock }}</td>
-                            <td class="px-6 py-3">{{ $data->price }}</td>
-                            <td class="px-6 py-3">
-                                <input type="number" name="quantity[{{ $data->id }}]" class="quantity-input"
-                                    data-price="{{ $data->price }}" min="1" max="{{ $data->stock }}">
-                            </td>
-                            <td class="px-6 py-3 total-price" data-price="{{ $data->price }}">Rp 0,-</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="6" class="px-6 py-3 text-center">No data available</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
-            <center>
+            <div class="col-span-1">
+                @foreach ($orderDetails as $detail)
+                    <div class="w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 mb-4">
+                        <h3 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
+                            {{ $detail['category'] }}
+                        </h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        <b>Tiket (x{{ $detail['quantity'] }})</b>
+                                    </th>
+                                    <td class="px-3 py-1">
+                                        Rp.{{ number_format($detail['total_price'], 2) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                @endforeach
+                <div class="w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 mb-4">
+                    <tfoot>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">
+                                        Total Harga :
+                                    </th>
+                                    <td class="px-3 py-1">
+                                        Rp.{{ number_format($totalAmount, 2) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </tfoot>
+                </div>
+            </div>
+            {{-- <center>
                 <button type="submit"
                     class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">BELI</button>
-            </center>
+            </center> --}}
         </form>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                document.querySelectorAll('.quantity-input').forEach(function(input) {
-                    input.addEventListener('input', function() {
-                        const price = parseFloat(this.getAttribute('data-price'));
-                        const quantity = parseInt(this.value);
-                        const totalPriceElement = this.closest('tr').querySelector('.total-price');
-                        const totalPrice = price * quantity;
-                        totalPriceElement.textContent = `Rp ${totalPrice.toLocaleString('id-ID')},-`;
-                    });
-                });
-            });
-        </script>
-
-
-
     </div>
+
 
 
     <footer
@@ -135,6 +128,7 @@
             </li>
         </ul>
     </footer>
+
 </body>
 
 </html>

@@ -82,4 +82,12 @@ class PembayaranController extends Controller
 
         return view('resi', compact('tikets', 'user', 'orderDetails', 'totalAmount'));
     }
+
+    public function cart()
+    {
+        $tikets = Tiket::all();
+        $orderDetails = session('orderDetails');
+        $totalAmount = array_sum(array_column($orderDetails, 'total_price')); // You can adjust this query as per your application logic
+        return view('keranjang.index', compact('tikets', 'orderDetails', 'totalAmount'));
+    }
 }

@@ -40,6 +40,8 @@ Route::get('/pembayaran/hasil', [ControllersPembayaranController::class, 'showDe
 Route::post('/process-virtual-account-payment', [ControllersPembayaranController::class, 'processVirtualAccountPayment'])->name('process_virtual_account_payment');
 Route::get('/payment/success', [ControllersPembayaranController::class, 'success'])->name('payment_success');
 Route::get('/resi', [ControllersPembayaranController::class, 'resi'])->name('resi');
+Route::get('/keranjang', [ControllersPembayaranController::class, 'cart'])->name('keranjang.index');
+
 
 
 // Route daftar
