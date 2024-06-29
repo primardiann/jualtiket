@@ -90,6 +90,7 @@ class KonserController extends Controller
      */
     public function edit(Konser $konser)
     {
+        $konser = Konser::findorfail($konser->id);
         // Menggunakan model binding, $konser sudah berisi instance Konser yang sesuai dengan {konser} dari URL
         return view('admin_edit_konser', compact('konser'));
     }

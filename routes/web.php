@@ -27,6 +27,9 @@ Route::get('/', function () {
 
 // Route for AdminController
 Route::get('/admin/tampilan-awal', [ControllersAdminController::class, 'index'])->name('admin_tampilan_awal');
+Route::get('/admin/data_tiket', [ControllersAdminController::class, 'show'])->name('admin_data_tiket');
+Route::get('/admin/data', [ControllersAdminController::class, 'showData'])->name('data-pembeli');
+
 
 // Route for PembayaranController
 Route::get('/pembayaran/detail', [ControllersPembayaranController::class, 'detail'])->name('detail_pembayaran');
@@ -53,7 +56,7 @@ Route::get('/konsers/create', [KonserController::class, 'create'])->name('konser
 Route::post('/konsers', [KonserController::class, 'store'])->name('konser.store');
 Route::get('/konsers', [KonserController::class, 'index'])->name('konser.index');
 // Route::get('/admin/{konser}', [KonserController::class, 'show'])->name('konser.show');
-Route::get('/edit/{konserId}/edit', [KonserController::class, 'edit'])->name('konser.edit');
+Route::get('/konsers/{konser}/edit', [KonserController::class, 'edit'])->name('konser.edit');
 Route::put('/konsers/{konser}/update', [KonserController::class, 'update'])->name('konser.update');
 Route::delete('/konsers/{konser}', [KonserController::class, 'destroy'])->name('konser.destroy');
 
