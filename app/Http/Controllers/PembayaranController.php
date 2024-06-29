@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tiket;
 use App\Models\Pembayaran;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Auth;
 
 class PembayaranController extends Controller
@@ -33,6 +34,36 @@ class PembayaranController extends Controller
         session(['orderDetails' => $orderDetails]);
 
         return redirect()->route('detail');
+    }
+
+    public function addToCart(Request $request)
+    {
+        // Ambil data item yang ditambahkan ke keranjang dari request
+
+        // Simpan ke basis data menggunakan model Cart
+        $cartItem = new Cart();
+        $cartItem->user_id = auth()->id(); // Misalnya user ID dari pengguna yang sedang login
+        $cartItem->category = $request->category; // Ambil category dari request
+        $cartItem->quantity = $request->quantity;
+        $cartItem->save();
+
+        // Tampilkan konfirmasi atau redirect ke halaman keranjang
+    }
+
+    public function cart()
+    {
+        // Ambil data tiket dari session atau logic lainnya
+        $orderDetails = session('orderDetails');
+
+        // Inisialisasi $totalAmount
+        $totalAmount = 0;
+
+        // Hitung total amount jika orderDetails tidak kosong
+        if (!empty($orderDetails)) {
+            $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
+        }
+
+        return view('keranjang.index', compact('orderDetails', 'totalAmount'));
     }
 
     public function showDetailPembayaran()
@@ -81,13 +112,5 @@ class PembayaranController extends Controller
         $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
 
         return view('resi', compact('tikets', 'user', 'orderDetails', 'totalAmount'));
-    }
-
-    public function cart()
-    {
-        $tikets = Tiket::all();
-        $orderDetails = session('orderDetails');
-        $totalAmount = array_sum(array_column($orderDetails, 'total_price')); // You can adjust this query as per your application logic
-        return view('keranjang.index', compact('tikets', 'orderDetails', 'totalAmount'));
     }
 }

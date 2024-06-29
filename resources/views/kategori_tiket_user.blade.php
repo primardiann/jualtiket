@@ -38,11 +38,8 @@
                                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">Logout</button>
                             </form>
                         </li>
-                        <li>
-                            <a href="{{ route('keranjang.index') }}"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">Tiket
-                                saya</a>
-                        </li>
+
+
 
                         <li>
                             <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full">
@@ -79,7 +76,7 @@
                             <td class="px-6 py-3">{{ $data->price }}</td>
                             <td class="px-6 py-3">
                                 <input type="number" name="quantity[{{ $data->id }}]" class="quantity-input"
-                                    data-price="{{ $data->price }}" min="1" max="{{ $data->stock }}">
+                                    data-price="{{ $data->price }}" min="0" max="{{ $data->stock }}">
                             </td>
                             <td class="px-6 py-3 total-price" data-price="{{ $data->price }}">Rp 0,-</td>
                         </tr>

@@ -36,9 +36,6 @@
             </form>
 
             <div class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-                <a
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 focus:outline-none">tiket
-                    Saya</a>
 
                 <div class="relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full">
                     <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewbox="0 0 20 20"

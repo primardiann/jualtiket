@@ -66,7 +66,7 @@
                         <td class="px-6 py-3">{{ $data->stock }}</td>
                         <td class="px-6 py-3">{{ $data->price }}</td>
                         <td class="px-6 py-3">
-                            <input type="number" min="1" max="{{ $data->stock }}" value="1"
+                            <input type="number" min="0" max="{{ $data->stock }}" value="1"
                                 class="kuantitas border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 data-price="{{ $data->price }}" />
                         </td>

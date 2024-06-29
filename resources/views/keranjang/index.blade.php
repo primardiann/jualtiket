@@ -40,6 +40,7 @@
                         </li>
 
 
+
                         <li>
                             <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full">
                                 <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor"
@@ -60,50 +61,49 @@
 
 
     <div class="mx-auto max-w-3xl mt-8 ml-2">
-        <form action="{{ route('process.order') }}" method="POST">
-            @csrf
-            <div class="col-span-1">
-                @foreach ($orderDetails as $detail)
-                    <div class="w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 mb-4">
-                        <h3 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
-                            {{ $detail['category'] }}
-                        </h3>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <b>Tiket (x{{ $detail['quantity'] }})</b>
-                                    </th>
-                                    <td class="px-3 py-1">
-                                        Rp.{{ number_format($detail['total_price'], 2) }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                @endforeach
+
+        <div class="col-span-1">
+            @foreach ($orderDetails as $detail)
                 <div class="w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 mb-4">
-                    <tfoot>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">
-                                        Total Harga :
-                                    </th>
-                                    <td class="px-3 py-1">
-                                        Rp.{{ number_format($totalAmount, 2) }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </tfoot>
+                    <h3 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
+                        {{ $detail['category'] }}
+                    </h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    <b>Tiket (x{{ $detail['quantity'] }})</b>
+                                </th>
+                                <td class="px-3 py-1">
+                                    Rp.{{ number_format($detail['total_price'], 2) }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            @endforeach
+            <div class="w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 mb-4">
+                <tfoot>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">
+                                    Total Harga :
+                                </th>
+                                <td class="px-3 py-1">
+                                    Rp.{{ number_format($totalAmount, 2) }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </tfoot>
             </div>
-            {{-- <center>
+        </div>
+        {{-- <center>
                 <button type="submit"
                     class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">BELI</button>
             </center> --}}
-        </form>
+
     </div>
 
 
