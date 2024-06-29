@@ -16,7 +16,6 @@ class KonserSeeder extends Seeder
         Konser::create([
             'nama_konser' => 'Konser Daniel',
             'tanggal' => now()->addDays(7),
-            'harga' => 100000,
             'waktu' => '19:00',
             'lokasi' => 'Gedung Utama Polibatam',
             'nama_artis' => 'Daniel Caesar',
@@ -24,15 +23,11 @@ class KonserSeeder extends Seeder
             'foto_konser' => 'daniel.jpg',
             'tanggal_awal' => now()->addDays(3),
             'tanggal_akhir' => now()->addDays(10),
-        
-        
         ]);
-
 
         Konser::create([
             'nama_konser' => 'Konser Taylor',
             'tanggal' => now()->addDays(7),
-            'harga' => 100000,
             'waktu' => '19:45',
             'lokasi' => 'Gedung Utama Polibatam',
             'nama_artis' => 'Taylor Swift',
@@ -40,8 +35,6 @@ class KonserSeeder extends Seeder
             'foto_konser' => 'taylor.jpg',
             'tanggal_awal' => now()->addDays(3),
             'tanggal_akhir' => now()->addDays(10),
-        
-        
         ]);
     }
 }

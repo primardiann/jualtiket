@@ -6,16 +6,21 @@
 </head>
 
 
+
 <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-400">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start rtl:justify-end">
-                <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" fill="currentColor" viewbox="0 0 24 24">
-                    <path fill-rule="evenodd"
-                        d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
-                        clip-rule="evenodd" />
-                </svg>
+                <a href="{{ route('admin_tampilan_awal') }}"
+                    class="flex items-center p-2 text-gray-800 hover:text-blue-600">
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="ml-2">Home</span>
+                </a>
 
                 <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
                     type="button"
@@ -30,6 +35,7 @@
                 </button>
                 <a href="https://flowbite.com" class="flex ms-2 md:me-24">
                     <img class="w-12 h-12 rounded-full" src="/images/Logo.jpg" alt="Rounded avatar">
+
                     <span class=" text-4xl font-semibold whitespace-nowrap">Concert.tix</span>
                 </a>
             </div>
