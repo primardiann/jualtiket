@@ -33,6 +33,8 @@ Route::get('/admin/data', [ControllersAdminController::class, 'showData'])->name
 
 // Route for PembayaranController
 Route::get('/pembayaran/detail', [ControllersPembayaranController::class, 'detail'])->name('detail_pembayaran');
+Route::post('/process-order', [ControllersPembayaranController::class, 'processOrder'])->name('process.order');
+Route::get('/pembayaran/hasil', [ControllersPembayaranController::class, 'showDetailPembayaran'])->name('detail');
 
 
 // Route daftar

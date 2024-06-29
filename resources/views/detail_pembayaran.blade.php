@@ -116,56 +116,52 @@
 
     <div class="col-span-1">
         <div class="w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 mb-4">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-                <h5 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
-                    Detail pembayaran
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50"></thead>
+            <h5 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
+                Detail Pembayaran
+            </h5>
+            @if (session()->has('orderDetails'))
+                @php
+                    $orderDetails = session('orderDetails');
+                    $totalAmount = array_sum(array_column($orderDetails, 'total_price'));
+                @endphp
+
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Category</th>
+                            <th scope="col" class="px-6 py-3">Quantity</th>
+                            <th scope="col" class="px-6 py-3">Total Price</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                Reguler (x2)
-                            </th>
-                            <td class="px-3 py-1">
-                                Rp.2.000.000,-
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                VIP (x2)
-                            </th>
-                            <td class="px-3 py-1">
-                                Rp.4.000.000,-
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                Admin fee
-                            </th>
-                            <td class="px-6 py-4">
-                                Rp.0,-
-                            </td>
-                        </tr>
+                        @foreach ($orderDetails as $order)
+                            <tr>
+                                <td class="px-6 py-3">{{ $order['category'] }}</td>
+                                <td class="px-6 py-3">{{ $order['quantity'] }}</td>
+                                <td class="px-6 py-3">Rp {{ number_format($order['total_price'], 0, ',', '.') }},-</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                     <tfoot>
                         <tr>
-                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">
-                                TOTAL
-                            </th>
-                            <td class="px-3 py-1">
-                                Rp.6.000.000,-
-                            </td>
+                            <th scope="row" class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap">TOTAL</th>
+                            <td class="px-6 py-4"></td>
+                            <td class="px-6 py-4">Rp {{ number_format($totalAmount, 0, ',', '.') }},-</td>
                         </tr>
                     </tfoot>
-                    </tbody>
-            </table>
-            <div>
-                <center>
+                </table>
+            @endif
+            <div class="mt-4 text-center">
+                <form action="'{{ route('detail') }}" method="GET">
                     <button type="button"
                         class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">
                         BELI
                     </button>
-                </center>
+                </form>
             </div>
         </div>
     </div>
-
 </div>
+</body>
+
+</html>
