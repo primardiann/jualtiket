@@ -60,16 +60,15 @@
         <h5 class="mb-3 text-base font-bold text-gray-900 md:text-xl">
             Metode Pembayaran
         </h5>
-        <p class="text-sm font-normal text-gray-500">Pilih metode pembayaran Virtual Account:</p>
+        <p class="text-sm font-normal text-gray-500">Pembayaran yang dipilih metode : </p>
         <ul class="my-4 space-y-3">
             <li>
-                <form action="{{ route('process_virtual_account_payment') }}" method="POST">
-                    @csrf
-                    <button type="submit"
-                        class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
-                        <span class="flex-1 ms-3 whitespace-nowrap">Virtual Account</span>
-                    </button>
-                </form>
+
+                <button type="submit"
+                    class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow">
+                    <span class="flex-1 ms-3 whitespace-nowrap">Virtual Account</span>
+                </button>
+
             </li>
         </ul>
     </div>
@@ -107,7 +106,7 @@
             </table>
 
             <div class="mt-4 text-center">
-                <form action="{{ route('resi') }}" method="GET">
+                <form action="{{ route('payment_success') }}" method="GET">
                     <button type="submit"
                         class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">
                         BELI

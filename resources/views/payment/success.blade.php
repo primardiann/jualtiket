@@ -65,11 +65,11 @@
             <div class="text-center">
                 <h2 class="text-4xl font-bold text-gray-900 mb-8">Pembayaran Berhasil</h2>
                 <p class="text-lg text-gray-700 mb-8">Terima kasih! Pembayaran Anda telah berhasil diproses.</p>
-                <form action="{{ route('logout') }}" method="POST">
+                <form action="{{ route('resi') }}" method="GET
                     @csrf
                     <button type="submit"
-                        class="block w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold text-center py-3 rounded-lg">Kembali
-                        ke Halaman Utama
+                        class="block w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold text-center py-3 rounded-lg">
+                        Tamplkan Resi Pembayaran
                 </form></button>
             </div>
         </div>
