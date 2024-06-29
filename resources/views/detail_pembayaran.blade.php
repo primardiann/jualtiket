@@ -107,8 +107,8 @@
             </table>
 
             <div class="mt-4 text-center">
-                <form action="'{{ route('detail') }}" method="GET">
-                    <button type="button"
+                <form action="{{ route('resi') }}" method="GET">
+                    <button type="submit"
                         class="text-sky-600 bg-blue-200 hover:bg-sky-200 focus:ring-4 focus:bg-sky-500 font-medium rounded-lg text-sm px-5 py-2.5 me-5 mb-5 focus:outline-none">
                         BELI
                     </button>

@@ -68,4 +68,10 @@ class PembayaranController extends Controller
     {
         return view('payment.success'); // Ganti dengan nama view yang sesuai
     }
+
+    public function resi()
+    {
+        // Logika untuk menampilkan halaman resi
+        return view('resi');
+    }
 }

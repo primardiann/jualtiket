@@ -37,6 +37,7 @@ Route::post('/process-order', [ControllersPembayaranController::class, 'processO
 Route::get('/pembayaran/hasil', [ControllersPembayaranController::class, 'showDetailPembayaran'])->name('detail');
 Route::post('/process-virtual-account-payment', [ControllersPembayaranController::class, 'processVirtualAccountPayment'])->name('process_virtual_account_payment');
 Route::get('/payment/success', [ControllersPembayaranController::class, 'success'])->name('payment_success');
+Route::get('/resi', [ControllersPembayaranController::class, 'resi'])->name('resi');
 
 
 // Route daftar
