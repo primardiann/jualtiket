@@ -57,7 +57,7 @@
         </div>
     </nav>
 
-    <div class="mx-auto max-w-2xl mt-8">
+    <div class="mx-auto max-w-2xl mt-2">
         <h2 class="text-2xl font-bold">Resi Hasil Pesanan</h2> <br>
         <p><b>Nama Pembeli:</b> {{ $user->first_name }} {{ $user->last_name }}</p>
         <p><b>Email Pembeli:</b> {{ $user->email }}</p>

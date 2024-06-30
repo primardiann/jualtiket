@@ -108,7 +108,7 @@
 
         <a href="{{ route('konser.create') }}"
             class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-200 mb-4">
-            Tambah Tiket
+            Tambah Konser
         </a>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -94,6 +94,15 @@
                         <span class="ml-2 text-gray-700">{{ $konser->lokasi }}</span>
                     </li>
                     <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900">Syarat dan Ketentuan
+                    </h5>
+                    <p class="mb-3 font-normal text-gray-700">
+                    <ol>
+                        <li>- Anak berusia tiga tahun atau lebih mesti beli tiket</li>
+                        <li>- Tak perlu tiket untuk anak di bawah tiga tahun</li>
+                        <li>- Anak-anak di bawah 12 tahun atau lebih pendek dari 1,2 meter dilarang
+                        </li>
+                        <li>masuk ke area berdiri</li>
+                    </ol>
 
                 </ul>
             </div>

@@ -35,7 +35,7 @@
                 </div>
             </form>
 
-            <div class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+            {{-- <div class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
 
                 <div class="relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full">
                     <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewbox="0 0 20 20"
@@ -48,7 +48,7 @@
                 <button data-collapse-toggle="mega-menu-icons" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="mega-menu-icons" aria-expanded="false"></button>
-            </div>
+            </div> --}}
         </div>
     </nav>
 
@@ -63,19 +63,19 @@
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item="data-carousel-item">
-                <img src="images/daniel.jpg" class="block w-full h-full object-cover" alt="...">
+                <img src="images/Ariana Grande.jpg" class="block w-full h-full object-cover" alt="...">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item="data-carousel-item">
-                <img src="images/taylor.jpg" class="block w-full h-full object-cover" alt="...">
+                <img src="images/Justin Bieber.jpg" class="block w-full h-full object-cover" alt="...">
             </div>
             <!-- Item 4 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item="data-carousel-item">
-                <img src="images/taylor2.jpeg" class="block w-full h-full object-cover" alt="...">
+                <img src="images/Ed Sheeran.jpg" class="block w-full h-full object-cover" alt="...">
             </div>
             <!-- Item 5 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item="data-carousel-item">
-                <img src="images/Taylor-Swift.jpg" class="block w-full h-full object-cover" alt="...">
+                <img src="images/Shawn Mendes.jpg" class="block w-full h-full object-cover" alt="...">
             </div>
         </div>
     </div>
@@ -172,7 +172,7 @@
                     <button>
                         <a href="{{ route('deskripsi', $konser->id) }}"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Harga Tiket
+                            Deskripsi Konser
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -195,7 +195,7 @@
 <footer
     class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6">
     <span class="text-sm text-gray-500 sm:text-center">© 2023
-        <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+        <a href="https://flowbite.com/" class="hover:underline">Concer.tix™</a>. All Rights Reserved.
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0">
         <li>

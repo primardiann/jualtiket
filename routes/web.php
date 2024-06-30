@@ -31,6 +31,7 @@ Route::get('/', [HomeController::class, 'index'])->name('tampilan_awal');
 Route::get('/admin/tampilan-awal', [ControllersAdminController::class, 'index'])->name('admin_tampilan_awal');
 Route::get('/admin/data_tiket', [ControllersAdminController::class, 'show'])->name('admin_data_tiket');
 Route::get('/admin/data', [ControllersAdminController::class, 'showData'])->name('data-pembeli');
+Route::delete('/hapus-data/{id}', [ControllersAdminController::class, 'hapusData'])->name('hapus-data');
 
 
 // Route for PembayaranController
