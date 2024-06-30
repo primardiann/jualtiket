@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\LoginRequest;
 
-
 class LoginController extends Controller
 {
     /**
@@ -35,11 +34,11 @@ class LoginController extends Controller
             return redirect()->intended('dashboard'); // Adjust the intended URL as needed
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->withInput($request->only('email'));
-
-
+        return back()
+            ->withErrors([
+                'email' => 'Email atau password salah.',
+            ])
+            ->withInput($request->only('email'));
     }
 
     /**
