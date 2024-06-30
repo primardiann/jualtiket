@@ -88,20 +88,7 @@
 
     </div>
 
-    <!-- Footer -->
-    <footer
-        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6">
-        <div class="max-w-screen-xl mx-auto flex items-center justify-between">
-            <span class="text-sm text-gray-500">&copy; 2023 <a href="https://flowbite.com/"
-                    class="hover:underline">Concert.tix™</a>. All Rights Reserved.</span>
-            <ul class="flex flex-wrap items-center space-x-4 text-sm font-medium text-gray-500">
-                <li><a href="#" class="hover:underline">About</a></li>
-                <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-                <li><a href="#" class="hover:underline">Licensing</a></li>
-                <li><a href="#" class="hover:underline">Contact</a></li>
-            </ul>
-        </div>
-    </footer>
+    
 
 </body>
 
