@@ -19,7 +19,6 @@ yarn-error.log
 /.vscode
 
 composer.lock
-app/Http/Controllers/HomeController.php
 app/Http/Controllers/ListBarangController.php
 resources/views/contact.blade.php
 resources/views/home.blade.php
